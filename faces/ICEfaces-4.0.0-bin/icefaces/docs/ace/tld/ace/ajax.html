@@ -1,0 +1,151 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ajax
+          (ICEfaces ACE Components 4.0.0 Tag Library Reference)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="ajax (ICEfaces ACE Components 4.0.0 Tag Library Reference)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="ajax.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">ICEfaces ACE Components</font>
+<br>
+            Tag ajax</h2>
+<hr>Applied on components that support client behaviors similar to the standard f:ajax behavior.<p>For more information, see the <a href="http://wiki.icefaces.org/display/ICE/Ajax">Ajax Wiki Documentation</a>.<br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>disabled</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Disables ajax behavior.</td>
+</tr>
+<tr valign="top">
+<td>event</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Name of the event that will trigger the ajax request.</td>
+</tr>
+<tr valign="top">
+<td>execute</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Component(s) to execute in the ajax request. The format is the same as that of the f:ajax tag.</td>
+</tr>
+<tr valign="top">
+<td>immediate</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Boolean value that determines the phaseId, when true actions are processed at apply_request_values, when false at invoke_application phase. If not specified, the component's immediate value is applied.</td>
+</tr>
+<tr valign="top">
+<td>listener</td><td>no</td><td>true</td><td><code>javax.el.MethodExpression</code></td><td>Method to process in partial request.</td>
+</tr>
+<tr valign="top">
+<td>onComplete</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Javascript handler to execute when the ajax request is completed. It is passed the 'args' argument, containing ACE callback parameters such as 'validationFailed'.</td>
+</tr>
+<tr valign="top">
+<td>onError</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Javascript handler to execute when the ajax request fails. It is passed the 'status' and 'error' arguments, containing the returned server status code and error message, respectively.</td>
+</tr>
+<tr valign="top">
+<td>onStart</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Javascript handler to execute before the ajax request begins. It is passed the 'cfg' argument, containing the ajax request configuration to be modified before the request is sent. The function has to return 'true' to continue with the ajax request; if 'false' or nothing is returned, the ajax request will be aborted.</td>
+</tr>
+<tr valign="top">
+<td>onSuccess</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Javascript handler to execute when the ajax request succeeds. It is passed the 'data' argument, containing the XML content of the entire JSF response.</td>
+</tr>
+<tr valign="top">
+<td>render</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Component(s) to render in the ajax rquest. The format is the same as that of the f:ajax tag.</td>
+</tr>
+<tr valign="top">
+<td>resetValues</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Reset submit values after submit. The format is the same as that of the f:ajax tag.</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="ajax.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

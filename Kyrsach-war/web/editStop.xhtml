@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components">
+    <h:head>
+        <title>Edit stop</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h2> 
+                    <h:outputLabel value="Edit stop"/> 
+                </h2>
+                <table>
+                    <tr>
+                        <th align="left">
+                            <h:outputLabel value="Stop's name" for="name"/>
+                        </th>
+                        <th>
+                            <h:inputText id="name" value="#{stopBean.stop.name}" required="true">
+                            </h:inputText>
+                        </th>
+                        <th>
+                            <h:message for="name" style="color:red" />
+                        </th> 
+                    </tr> 
+                    <tr> 
+                        <th align="left"> 
+                            <h:outputLabel value="X" for="old"/> 
+                        </th> 
+                        <th> 
+                            <h:inputText id="coordX" value="#{stopBean.stop.coordX}" required="true"> 
+                                <f:validateDoubleRange maximum="1000" minimum="-1000"/>
+                            </h:inputText> 
+                        </th> 
+                        <th> 
+                            <h:message for="X" style="color:red" /> 
+                        </th> 
+                    </tr> 
+                    <tr> 
+                        <th align="left"> 
+                            <h:outputLabel  value="y" for="timeold"/> 
+                        </th> 
+                        <th> 
+                            <h:inputText id="coordY" value="#{stopBean.stop.coordY}" required="true"> 
+                                <f:validateDoubleRange maximum="1000" minimum="-1000"/>
+                            </h:inputText> 
+                        </th> 
+                        <th> 
+                            <h:message for="timeold" style="color:red" /> 
+                        </th> 
+                    </tr> 
+                    <tr> 
+                        <th></th> 
+                        <th align="right"> 
+                            <h:commandButton  value="Save changes" action="#{stopBean.editStop()}"/> 
+                        </th> 
+                    </tr>
+                </table>
+                <br/><br/>
+                <h:commandButton value="Back to the stop list" action="/allStops.xhtml"/>
+            </h:form> 
+        </f:view>
+    </h:body>
+</html>
+

@@ -1,0 +1,157 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>submitMonitor
+          (ICEfaces ACE Components 4.0.0 Tag Library Reference)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="submitMonitor (ICEfaces ACE Components 4.0.0 Tag Library Reference)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="submitMonitor.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">ICEfaces ACE Components</font>
+<br>
+            Tag submitMonitor</h2>
+<hr>Monitors submits to the server, and indicates the status of the submits, server and network connection, and session validity. Examples of supported submit methods are: components doing full form submits, partialSubmit(s) by ice: components, f:ajax submits by h: components, ace:ajax submits by ace: components, and direct use of ICEfaces javascript submit APIs. Supports configurable text labels and image state indicators, or facets for a fully configurable UI. Optionally uses an overlay for UI blocking during submits. Can be set to monitor a portion of the page, in tandem with other submitMonitors each monitoring their own distinct portions.<p>For more information, see the <a href="http://wiki.icefaces.org/display/ICE/SubmitMonitor">SubmitMonitor Wiki Documentation</a>.<hr><table border='1' cellpadding='3' cellspacing='0' width='100%'><tr bgcolor='#CCCCFF' class='TableHeadingColor'><td colspan='2'><font size='+2'><b>Facets</b></font></td></tr><tr><td>idle</td><td>Allows rendering of nested components as label for idle state.</td></tr><tr><td>active</td><td>Allows rendering of nested components as label for active state.</td></tr><tr><td>serverError</td><td>Allows rendering of nested components as label for serverError state.</td></tr><tr><td>networkError</td><td>Allows rendering of nested components as label for networkError state.</td></tr><tr><td>sessionExpired</td><td>Allows rendering of nested components as label for sessionExpired state.</td></tr></table><br><br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>org.icefaces.ace.component.submitmonitor.SubmitMonitorTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>activeLabel</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Label to be displayed on the submitMonitor while a submit is in progress.</td>
+</tr>
+<tr valign="top">
+<td>autoCenter</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>When blockUI is enabled, and this property is true, the submitMonitor will display centered over the translucent overlay. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>binding</td><td>no</td><td>true</td><td><code>javax.el.ValueExpression</code></td><td>Using an EL expression, bind the component reference to a bean property, so that the component may be accessed in the bean.</td>
+</tr>
+<tr valign="top">
+<td>blockUI</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>When enabled, display a translucent overlay on a portion of the window, and only show the submitMonitor UI when the connection is not idle and a submit is underway. This property specifies on what portion of the window to show the overlay: "@all" means the whole document body, "@source" means only over the component that originated the request, or a for style component search string may be given to specify a component. Finally, "@none" means to disable the overlay and have the submitMonitor UI always present where it has been placed in the page. Default = '@all'.</td>
+</tr>
+<tr valign="top">
+<td>for</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Specify space separated list of components, by their for property format search strings, so that those components and, recursively, all of their children, will be monitored by this component when they act as the source for submits. When this property is empty or unspecified, this component will monitor all submits from all sources. This property allows for different submitMonitor components to co-exist on a page, and each monitor different, non-overlapping, regions of the page, and be shown with their own unique labels etc.</td>
+</tr>
+<tr valign="top">
+<td>id</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The component identifier for this component. This value must be unique within the closest parent component that is a naming container.</td>
+</tr>
+<tr valign="top">
+<td>idleLabel</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Label to be displayed on the submitMonitor when no submit is in progress. This is only shown if blockUI="@none", since with the popup cases, the submitMonitor is not shown when idle.</td>
+</tr>
+<tr valign="top">
+<td>networkErrorLabel</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Label to be displayed on the submitMonitor when there is a network error.</td>
+</tr>
+<tr valign="top">
+<td>preload</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>When using images to indicate a server or network error, they may need to be preloaded while the server is still accessible. This preloads theme images when facets are not used. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>rendered</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Return true if this component (and its children) should be rendered during the Render Response phase of the request processing lifecycle. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>serverErrorLabel</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Label to be displayed on the submitMonitor when there is a server error.</td>
+</tr>
+<tr valign="top">
+<td>sessionExpiredLabel</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Label to be displayed on the submitMonitor when the session is expired.</td>
+</tr>
+<tr valign="top">
+<td>styleClass</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Style class of the container element.</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="submitMonitor.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

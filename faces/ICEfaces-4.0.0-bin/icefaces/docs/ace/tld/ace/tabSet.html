@@ -1,0 +1,160 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>tabSet
+          (ICEfaces ACE Components 4.0.0 Tag Library Reference)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="tabSet (ICEfaces ACE Components 4.0.0 Tag Library Reference)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="tabSet.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">ICEfaces ACE Components</font>
+<br>
+            Tag tabSet</h2>
+<hr><p>The TabSet component is a container for its TabPane children, each of which may contain any arbitrary components. Only one TabPane component is currently active, and its contents shown, at any given time. The TabSet may operate in a server-side mode, where only the current TabPane's contents exist in the browser; or in client-side mode, where every TabPane's contents exist in the browser, and no server round-trip is necessary to change TabPanes. The entire TabSet may exist within a single parent form, so that validation will apply to all of its contents, and so that validation may enforce remaining on the current TabPane if the user attempts to change the selected TabPane while other input components are in an invalid state. Also, a TabSet may exist outside of any form, perhaps with each TabPane containing their own child form, so that validation may be more limited in scope. In this case, a TabSetProxy may be used, in conjunction with the TabSet, so that the TabSetProxy may be placed in a form, for communicating with the server, removing the need for the TabSet itself to be in a form. When changing the selected TabPane, the TabSet may use application configurable animations to accentuate the transition from the previously selected TabPane to the newly selected TabPane. The label portion of the TabPanes may be shown on the bottom, top, left, or right of the TabSet. To support the capability of dynamically adding and removing TabPane(s) without updating the entire TabSet, there is a side-effect where any iframe(s) within them can get loaded twice in rapid succession, when first shown or subsequently updated. To eliminate the redundant load by deferring the loading until the TabSet is ready, do not use a src attribute on the iframe(s), but rather set the org.icefaces.ace.component.tabset.deferred_src attribute to what src would have been.<p>For more information, see the <a href="http://wiki.icefaces.org/display/ICE/TabSet">TabSet Wiki Documentation</a>.<hr><table border='1' cellpadding='3' cellspacing='0' width='100%'><tr bgcolor='#CCCCFF' class='TableHeadingColor'><td colspan='4'><font size='+2'><b>Client Events</b></font></td></tr><tr><td><b>Name</b></td><td><b>Description</b></td><td><b>Supported Classes for Argument</b></td><td><b>Default Event Scopes</b></td><tr><tr><td>clientSideTabChange</td><td>Fired when the tabSet has clientSide=true, and a tab change occurs. Use onstart="return false;" to limit javascript execution.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@none render=@none</td></tr><tr><td>serverSideTabChange</td><td>Fired when the tabSet has clientSide=false, and a tab change occurs (default event).</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@all render=@all</td></tr></table><i>Client events can be used with Client Behaviors and the ace:ajax tag.</i><br><br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>org.icefaces.ace.component.tabset.TabSetTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>binding</td><td>no</td><td>true</td><td><code>javax.el.ValueExpression</code></td><td>Using an EL expression, bind the component reference to a bean property, so that the component may be accessed in the bean.</td>
+</tr>
+<tr valign="top">
+<td>cancelOnInvalid</td><td>no</td><td>true</td><td><code>boolean</code></td><td><p>Controls how input component validation affects changing the selected TabPane. When false, then irrespective of immediate, selectedIndex will be set and tabChangeListener will be invoked in APPLY_REQUEST_VALUES phase. PROCESS_VALIDATIONS phase will still execute and create any FacesMessage(s), but won't interfere with the changing TabPane selection. <p>Otherwise, when true, then it depends on immediate. When immediate is true, selectedIndex will be set and tabChangeListener will be invoked in APPLY_REQUEST_VALUES phase, but PROCESS_VALIDATIONS phase will not execute, so no FacesMessage(s) can be created. When immediate is false, then selectedIndex will be set in UPDATE_MODEL and tabChangeListener will be invoked in INVOKE_APPLICATION, and so any validation error in PROCESS_VALIDATIONS will stop the changing of the selected TabPane. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>clientSide</td><td>no</td><td>true</td><td><code>boolean</code></td><td>This component supports both client and server side tab change models. When clientSide is true, then the contents of all TabPanes get rendered on the client and clientSideTabChange will fire when changing the selected TabPane. Otherwise, in server side mode, typically only the selected TabPane contents will get rendered to the client, depending on the TabPane cache property, and serverSideTabChange will fire or the form will be submitted, so that the tabChangeListener will be invoked, and the newly selected TabPane contents may be sent to the browser. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>disabled</td><td>no</td><td>true</td><td><code>boolean</code></td><td>If true then all tabs except the active one will be disabled and can not be selected.</td>
+</tr>
+<tr valign="top">
+<td>id</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The component identifier for this component. This value must be unique within the closest parent component that is a naming container.</td>
+</tr>
+<tr valign="top">
+<td>immediate</td><td>no</td><td>true</td><td><code>boolean</code></td><td>If true (and/or cancelOnInvalid is false) then tabChangeListener will be invoked in APPLY_REQUEST_VALUES phase, otherwise INVOKE_APPLICATION phase. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>orientation</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Where the clickable TabPane labels are shown. Valid values are bottom, top, left and right. Default = 'top'.</td>
+</tr>
+<tr valign="top">
+<td>rendered</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Return true if this component (and its children) should be rendered during the Render Response phase of the request processing lifecycle. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>selectedIndex</td><td>no</td><td>true</td><td><code>int</code></td><td>The index of the current selected tab. Default = '0'.</td>
+</tr>
+<tr valign="top">
+<td>showEffect</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The effect when showing the contents of a tab after selecting it.</td>
+</tr>
+<tr valign="top">
+<td>showEffectLength</td><td>no</td><td>true</td><td><code>int</code></td><td>The duration of the show effect in milliseconds. The default value varies depending on the effect.</td>
+</tr>
+<tr valign="top">
+<td>style</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Custom inline CSS styles to use for this component. These styles are generally applied to the root DOM element of the component. This is intended for per-component basic style customizations. Note that due to browser CSS precedence rules, CSS rendered on a DOM element will take precedence over the external stylesheets used to provide the ThemeRoller theme on this component. If the CSS properties applied with this attribute do not affect the DOM element you want to style, you may need to create a custom theme styleClass for the theme CSS class that targets the particular DOM elements you wish to customize.</td>
+</tr>
+<tr valign="top">
+<td>styleClass</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Custom CSS style class(es) to use for this component. These style classes can be defined in your page or in a theme CSS file.</td>
+</tr>
+<tr valign="top">
+<td>tabChangeListener</td><td>no</td><td>true</td><td><code>javax.el.MethodExpression</code></td><td>MethodExpression representing a method that will be invoked when the selected TabPane has changed. The expression must evaluate to a public method that takes a ValueChangeEvent parameter, with a return type of void.</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="tabSet.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

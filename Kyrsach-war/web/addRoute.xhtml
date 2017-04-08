@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components">
+    <h:head>
+        <title>Add route</title>
+    </h:head>
+    <h:body>
+        <f:view> 
+            <h:form> 
+                <h2 align="center"> 
+                    <h:outputLabel value="Add new route"/> 
+                </h2> 
+
+                <p align="center"> 
+                    <h:outputLabel value="The number of the new route    " for="number"/>
+                    <h:inputText id="number" value="#{addRouteBean.route.number}" required="true"> 
+                        <f:validateLongRange maximum="1000" minimum="1"/>
+                    </h:inputText> 
+                    <h:message for="number" style="color:red" />    
+                </p> 
+                <p align="center"> 
+                    <h:outputLabel value="The ticket price of the new route    " for="price"/>
+                    <h:inputText id="price" value="#{addRouteBean.route.price}" required="true"> 
+                        <f:validateLongRange maximum="1000" minimum="1"/>
+                    </h:inputText> 
+                    <h:message for="price" style="color:red" />    
+                </p>
+                <p align="center"> 
+                    <h:outputLabel value="The time of route passing in minutes" for="time"/>
+                    <h:inputText id="time" value="#{addRouteBean.route.vremya}" required="true"> 
+                        <f:validateLongRange maximum="1000" minimum="1"/>
+                    </h:inputText> 
+                    <h:message for="time" style="color:red" />    
+                </p>
+                <p align="center">
+                    <h:selectBooleanCheckbox id="autoMirror" value="#{addRouteBean.autoMirror}" />
+                    <h:outputLabel value="Enable auto mirror" for="autoMirror" />
+                </p>
+                <table align="center"> 
+                    <tr>
+                        <td>
+                            <ace:dataTable value="#{addRouteBean.firstStops}"
+                                           var="st"
+                                           stateMap="#{addRouteBean.stateMap}">
+                                <ace:column headerText="Id" rendered ="false" >
+                                    <h:outputText value="#{st.idStop}"/>
+                                </ace:column>
+                                <ace:column headerText="Name"
+                                            filterBy="#{st.name}" filterMatchMode="contains">
+                                    <h:outputText value="#{st.name}"/>
+                                </ace:column>
+                                <ace:column headerText="Coordinate X"
+                                            rendered ="false" filterBy="#{st.coordX}" filterMatchMode="contains">
+                                    <h:outputText value="#{st.coordX}"/>
+                                </ace:column>
+                                <ace:column headerText="Coordinate Y"
+                                            rendered ="false" filterBy="#{st.coordY}" filterMatchMode="contains">
+                                    <h:outputText value="#{st.coordY}"/>
+                                </ace:column>
+                                <ace:column headerText=""> 
+                                    <h:commandLink action="#{addRouteBean.deleteStopFromCircuit(st, 1)}" value="Delete stop from scheme"/>
+                                </ace:column>
+                            </ace:dataTable>
+                        </td>
+                        <td style="width: 20px;">
+                        </td>
+                        <td>
+                            <ace:dataTable value="#{addRouteBean.secondStops}"
+                                           var="st"
+                                           stateMap="#{addRouteBean.stateMap}">
+                                <ace:column headerText="Id" rendered ="false">
+                                    <h:outputText value="#{st.idStop}"/>
+                                </ace:column>
+                                <ace:column headerText="Name"
+                                            filterBy="#{st.name}" filterMatchMode="contains">
+                                    <h:outputText value="#{st.name}"/>
+                                </ace:column>
+                                <ace:column headerText="Coordinate X"
+                                            rendered ="false" filterBy="#{st.coordX}" filterMatchMode="contains">
+                                    <h:outputText value="#{st.coordX}"/>
+                                </ace:column>
+                                <ace:column headerText="Coordinate Y"
+                                            rendered ="false" filterBy="#{st.coordY}" filterMatchMode="contains">
+                                    <h:outputText value="#{st.coordY}"/>
+                                </ace:column>
+                                <ace:column headerText=""> 
+                                    <h:commandLink action="#{addRouteBean.deleteStopFromCircuit(st, 2)}" value="Delete stop from scheme"/>
+                                </ace:column>
+                            </ace:dataTable>
+                        </td>
+                    </tr>
+                </table> 
+                <ace:dataTable value="#{stopBean.getAllStops()}"
+                               var="st">
+                    <ace:column headerText="Id" rendered ="false">
+                        <h:outputText value="#{st.idStop}"/>
+                    </ace:column>
+                    <ace:column headerText="Name" sortBy="#{st.name}"
+                                filterBy="#{st.name}" filterMatchMode="contains">
+                        <h:outputText value="#{st.name}"/>
+                    </ace:column>
+                    <ace:column headerText="Coordinate X" sortBy="#{st.coordX}"
+                                filterBy="#{st.coordX}" filterMatchMode="contains">
+                        <h:outputText value="#{st.coordX}"/>
+                    </ace:column>
+                    <ace:column headerText="Coordinate Y" sortBy="#{st.coordY}"
+                                filterBy="#{st.coordY}" filterMatchMode="contains">
+                        <h:outputText value="#{st.coordY}"/>
+                    </ace:column>
+                    <ace:column headerText="">
+                        <h:commandLink action="#{addRouteBean.addFirstStops(st)}" value="To the first scheme"/>
+                    </ace:column>
+                    <ace:column headerText="">
+                        <h:commandLink action="#{addRouteBean.addSecondStops(st)}" value="To the second scheme"/>
+                    </ace:column>
+                </ace:dataTable>
+                <br/>
+                <p align="center"> 
+                    <h:commandButton  value="Mirror he first scheme" action="#{addRouteBean.mirror()}"/> 
+                </p>
+                <p>
+                    <h:commandButton  value="Save the route" action="#{addRouteBean.addNewRoute()}"/>
+                </p>
+                <p align="center"> 
+                    <h:commandButton  value="Back to route list" action="/allRoutes.xhtml"/> 
+                </p>
+            </h:form> 
+        </f:view>
+    </h:body>
+</html>
+
+

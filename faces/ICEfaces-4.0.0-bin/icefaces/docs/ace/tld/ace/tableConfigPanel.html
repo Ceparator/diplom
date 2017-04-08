@@ -1,0 +1,163 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>tableConfigPanel
+          (ICEfaces ACE Components 4.0.0 Tag Library Reference)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="tableConfigPanel (ICEfaces ACE Components 4.0.0 Tag Library Reference)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="tableConfigPanel.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">ICEfaces ACE Components</font>
+<br>
+            Tag tableConfigPanel</h2>
+<hr><p>Renders a hidden panel with controls to configure column features. The table whose columns are to be configured is targeted with the 'for' attribute. The location of the button to reveal this panel is configured via the 'type' attribute.</p><p>The table config panel renders three buttons, a checkmark which submits changes, a crossout that closes without submitting changes, and a trashcan, that closes and resets the column properties configurable via the table config panel to an unconfigured state. </p><p>For more information, see the <a href="http://wiki.icefaces.org/display/ICE/TableConfigPanel">TableConfigPanel Wiki Documentation</a>.</p><hr><table border='1' cellpadding='3' cellspacing='0' width='100%'><tr bgcolor='#CCCCFF' class='TableHeadingColor'><td colspan='4'><font size='+2'><b>Client Events</b></font></td></tr><tr><td><b>Name</b></td><td><b>Description</b></td><td><b>Supported Classes for Argument</b></td><td><b>Default Event Scopes</b></td><tr><tr><td>open</td><td>Fired when the TableConfigPanel is shown.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>submit</td><td>Fired when the TableConfigPanel submits its changes and closes.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>cancel</td><td>Fired when the TableConfigPanel cancel its changes and closes.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>trash</td><td>Fired when the TableConfigPanel clears out it's changes and closes.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr></table><i>Client events can be used with Client Behaviors and the ace:ajax tag.</i><br><br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>org.icefaces.ace.component.tableconfigpanel.TableConfigPanelTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>binding</td><td>no</td><td>true</td><td><code>javax.el.ValueExpression</code></td><td>Using an EL expression, bind the component reference to a bean property, so that the component may be accessed in the bean.</td>
+</tr>
+<tr valign="top">
+<td>columnNameConfigurable</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enable the configuration of column headerText properties.</td>
+</tr>
+<tr valign="top">
+<td>columnOrderingConfigurable</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enable the configuration of column order.</td>
+</tr>
+<tr valign="top">
+<td>columnSortingConfigurable</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enable the configuration of column sorting priority and directions.</td>
+</tr>
+<tr valign="top">
+<td>columnVisibilityConfigurable</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enable the configuration of column visibility.</td>
+</tr>
+<tr valign="top">
+<td>dragHandle</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines a CSS selector of a TableConfigPanel subregion used as the handle when dragging the panel.</td>
+</tr>
+<tr valign="top">
+<td>for</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines the component ID of the DataTable this ConfigPanel manipulates.</td>
+</tr>
+<tr valign="top">
+<td>hideDisabledRows</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enable to hide columns with configurable property set to false, rather than render them with a disabled style. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>id</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The component identifier for this component. This value must be unique within the closest parent component that is a naming container.</td>
+</tr>
+<tr valign="top">
+<td>inColumnId</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines the column to render the 'launch' panel button in when using the 'in-col-left' or 'in-col-right' type options.</td>
+</tr>
+<tr valign="top">
+<td>modal</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Specify whether viewing this panel disables the rest of the application from input. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>offsetLeft</td><td>no</td><td>true</td><td><code>java.lang.Integer</code></td><td>Define the distance in pixels from left boundary of the CSS positioning bounding parent. If undefined, the panel is positioned offset slightly from the target DataTable.</td>
+</tr>
+<tr valign="top">
+<td>offsetTop</td><td>no</td><td>true</td><td><code>java.lang.Integer</code></td><td>Define the distance in pixels from top boundary of the CSS positioning bounding parent. If undefined, the panel is positioned offset slightly from the target DataTable.</td>
+</tr>
+<tr valign="top">
+<td>rendered</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Return true if this component (and its children) should be rendered during the Render Response phase of the request processing lifecycle. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>type</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines the display mode for the 'open' control panel button. Available options: first-col, last-col, in-col-right, in-col-left Default = 'first-col'.</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="tableConfigPanel.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

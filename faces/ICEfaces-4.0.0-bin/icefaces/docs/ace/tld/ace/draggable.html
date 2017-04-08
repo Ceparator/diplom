@@ -1,0 +1,187 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>draggable
+          (ICEfaces ACE Components 4.0.0 Tag Library Reference)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="draggable (ICEfaces ACE Components 4.0.0 Tag Library Reference)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="draggable.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">ICEfaces ACE Components</font>
+<br>
+            Tag draggable</h2>
+<hr>Enables an Id-specified component to be moved via dragging. Draggable component can cause events on droppable ones.<p>For more information, see the <a href="http://wiki.icefaces.org/display/ICE/Draggable">Draggable Wiki Documentation</a>.<hr><table border='1' cellpadding='3' cellspacing='0' width='100%'><tr bgcolor='#CCCCFF' class='TableHeadingColor'><td colspan='4'><font size='+2'><b>Client Events</b></font></td></tr><tr><td><b>Name</b></td><td><b>Description</b></td><td><b>Supported Classes for Argument</b></td><td><b>Default Event Scopes</b></td><tr><tr><td>start</td><td>Fired when the target component starts to be dragged (default event). By default, no components are rendered in this ajax request, because rendering this draggable component itself or the target component could cause a dynamic update that replaces the original nodes being dragged on the page, which could interrupt the dragging action for the user.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@none</td></tr></table><i>Client events can be used with Client Behaviors and the ace:ajax tag.</i><br><br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>org.icefaces.ace.component.dnd.DraggableTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>axis</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Restrict the drag movement of this item to an axis. Default is null, possible values include: "x" & "y".</td>
+</tr>
+<tr valign="top">
+<td>binding</td><td>no</td><td>true</td><td><code>javax.el.ValueExpression</code></td><td>Using an EL expression, bind the component reference to a bean property, so that the component may be accessed in the bean.</td>
+</tr>
+<tr valign="top">
+<td>containment</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Id of the parent component whose boundaries should restrict the movement of this draggable.</td>
+</tr>
+<tr valign="top">
+<td>cursor</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Cursor style to set when this component is being dragged. See <a href="http://www.quirksmode.org/css/cursor.html">this page</a> for a reference of what cursor styles your browser supports.</td>
+</tr>
+<tr valign="top">
+<td>datasource</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Allows you to set the ID of an UIData component that will provide a Java object as input for the drag start event. That object is defined by matching the index of the draggable to an object at the same index in the UIData component backing.</td>
+</tr>
+<tr valign="top">
+<td>disabled</td><td>no</td><td>true</td><td><code>boolean</code></td><td>If set, movement is disabled.</td>
+</tr>
+<tr valign="top">
+<td>dragOnly</td><td>no</td><td>true</td><td><code>boolean</code></td><td>If set, component won't cause drop event.</td>
+</tr>
+<tr valign="top">
+<td>dragStartListener</td><td>no</td><td>true</td><td><code>javax.el.MethodExpression</code></td><td>MethodExpression reference to a method called whenever the target component starts to be dragged. (It is advised not to use this event for updating the component being dragged, in order to avoid having its markup replaced while still dragging it. See wiki for more details.)</td>
+</tr>
+<tr valign="top">
+<td>for</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Id of the component to add draggable behavior to.</td>
+</tr>
+<tr valign="top">
+<td>grid</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines the drag movement of this component as though snapping to a grid in defined intervals. Ex: '20x20', measured in pixels.</td>
+</tr>
+<tr valign="top">
+<td>handle</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Restrict the drag-event start to an element specified by this JQuery selector.</td>
+</tr>
+<tr valign="top">
+<td>helper</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Specifies which element to move during the dragging event. Possible values are 'original' or 'clone'.</td>
+</tr>
+<tr valign="top">
+<td>id</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The component identifier for this component. This value must be unique within the closest parent component that is a naming container.</td>
+</tr>
+<tr valign="top">
+<td>opacity</td><td>no</td><td>true</td><td><code>java.lang.Double</code></td><td>The opacity for the helper during dragging. Values can range from 0.00 to 1.00. Default = '1.0'.</td>
+</tr>
+<tr valign="top">
+<td>rendered</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Return true if this component (and its children) should be rendered during the Render Response phase of the request processing lifecycle. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>revert</td><td>no</td><td>true</td><td><code>boolean</code></td><td>If set, the component will return to its original position when dragging stops.</td>
+</tr>
+<tr valign="top">
+<td>scope</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>This arbitrary keyword allows sets of dragabbles and droppables with the same keyword to be associated with each other exclusively.</td>
+</tr>
+<tr valign="top">
+<td>snap</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enable 'snap to droppable' behavior for this component.</td>
+</tr>
+<tr valign="top">
+<td>snapMode</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Specifies which edges on elements to snap to. Possible values include: outer, inner and both.</td>
+</tr>
+<tr valign="top">
+<td>snapTolerance</td><td>no</td><td>true</td><td><code>int</code></td><td>Distance in pixels from the droppable edges at which snapping should occur.</td>
+</tr>
+<tr valign="top">
+<td>stack</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>JQuery selector that defines the set of items this draggable shares its space with, ensures this item is brought to the front z-index when dragged.</td>
+</tr>
+<tr valign="top">
+<td>widgetVar</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The JavaScript component instance variable name.</td>
+</tr>
+<tr valign="top">
+<td>zindex</td><td>no</td><td>true</td><td><code>int</code></td><td>The z-index to set for the helper object.</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="draggable.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

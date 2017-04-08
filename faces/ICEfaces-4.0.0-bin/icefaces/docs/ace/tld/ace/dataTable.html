@@ -1,0 +1,280 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dataTable
+          (ICEfaces ACE Components 4.0.0 Tag Library Reference)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="dataTable (ICEfaces ACE Components 4.0.0 Tag Library Reference)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="dataTable.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">ICEfaces ACE Components</font>
+<br>
+            Tag dataTable</h2>
+<hr>Renders an HTML table element. This table and its associated components offers support for features like: scrolling, sorting, filtering, row selection, row editing, lazy loading and expandable subrows and subpanels.<p>For more information, see the <a href="http://wiki.icefaces.org/display/ICE/DataTable">DataTable Wiki Documentation</a>.</p><hr><table border='1' cellpadding='3' cellspacing='0' width='100%'><tr bgcolor='#CCCCFF' class='TableHeadingColor'><td colspan='4'><font size='+2'><b>Client Events</b></font></td></tr><tr><td><b>Name</b></td><td><b>Description</b></td><td><b>Supported Classes for Argument</b></td><td><b>Default Event Scopes</b></td><tr><tr><td>page</td><td>Fired when the page is changed on the DataTable.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>rowsPerPage</td><td>Fired when the rows per page is changed on the DataTable via the paginator control.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>cellClick</td><td>Fired when a cell is clicked on the DataTable.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>cellDblClick</td><td>Fired when a cell is double clicked on the DataTable.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>select</td><td>Fired when a row or cell is selected on the DataTable.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>deselect</td><td>Fired when a row or cell is deselected on the DataTable.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>sort</td><td>Fired when a change to the current sort occurs on the DataTable.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>filter</td><td>Fired when a change to the current filters occurs on the DataTable.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>reorder</td><td>Fired when a column is dragged and dropped into a new ordering.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>editStart</td><td>Fired when a row is enabled for editing.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@this</td></tr><tr><td>editSubmit</td><td>Fired when a row is submits its edits.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>editCancel</td><td>Fired when a row cancels an in-progress edit.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@this</td></tr><tr><td>expand</td><td>Fired when a child ExpansionToggler component is clicked to expand.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>contract</td><td>Fired when a child ExpansionToggler component is clicked to contract.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>pin</td><td>Fired when a column is added to the pinning region of the table.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@this</td></tr><tr><td>unpin</td><td>Fired when a column is removed to the pinning region of the table.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@this</td></tr></table><i>Client events can be used with Client Behaviors and the ace:ajax tag.</i><br><br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>org.icefaces.ace.component.datatable.DataTableTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>allColumnClicks</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enable to have all column clicks accepted as selection and/or ajax click events. Typically only click eventsthat occur on a child div, span, or the td element itself are captured for processing.</td>
+</tr>
+<tr valign="top">
+<td>alwaysExecuteContents</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enable the decoding of child components during table feature requests. The table attempts to decode children whenever it is executed, meaning whenever a parent region is submitted, or the table submits itself to paginate, make a selection, reorder columns, or any other feature. Decoding children during feature requests can result in unwanted input submission (during pagination for example), so by default this component suppresses child decoding whenever submitting itself. To cause decoding in the children of the table, use the row editing feature for row-scoped input decoding, ajax submit the form (or other table parent) for broad decodingor enable this option to submit during all table operations. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>binding</td><td>no</td><td>true</td><td><code>javax.el.ValueExpression</code></td><td>Using an EL expression, bind the component reference to a bean property, so that the component may be accessed in the bean.</td>
+</tr>
+<tr valign="top">
+<td>clickableHeaderSorting</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enabling makes the entire header container the clickable region for sort events. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>columnOrdering</td><td>no</td><td>true</td><td><code>java.util.List</code></td><td>Defines a list of integers representing a rendering order for the Column children of the table.</td>
+</tr>
+<tr valign="top">
+<td>columnPinning</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enable statically positioned columns along the left hand side of a scrollable table.</td>
+</tr>
+<tr valign="top">
+<td>columnPinningControlsInHeader</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enable client controls to add column to the list of statically positioned columns.</td>
+</tr>
+<tr valign="top">
+<td>columnsInheritProperties</td><td>no</td><td>true</td><td><code>boolean</code></td><td>To reduce redundancy in markup, body columns can detect which header column that they correspond to, and inherit sorting, filtering and grouping properties from it. Previously, it was necessary to provide the same properties and values on both components, but now it's possible to specify them on the header column, and have the body column inherit them automatically. If a property is specified on the body column, then that will take precedence for it. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>constantRefilter</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enable to force creation of the filtered data set from the bound value every render. Alternately attempt to use hashCodes of the value property to detect changes and prompt refiltering. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>currentPageReportTemplate</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines a coded string representing the layout of the text displaying the current page. The keywords available are {currentPage} and {totalPages}. Default is: "({currentPage} of {totalPages})".</td>
+</tr>
+<tr valign="top">
+<td>disabled</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Disable all features of the data table. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>doubleClickSelect</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enable to require a double-click to fire row/cell selection events.</td>
+</tr>
+<tr valign="top">
+<td>emptyMessage</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Define a string to render when there are no records to display.</td>
+</tr>
+<tr valign="top">
+<td>filterEvent</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines the Javascript event on which to trigger filter event, ex. 'keyup', 'blur', 'change' and 'enter'. Default = 'change'.</td>
+</tr>
+<tr valign="top">
+<td>filterListener</td><td>no</td><td>true</td><td><code>javax.el.MethodExpression</code></td><td>MethodExpression reference called whenever the table row is filtered. The method receives a single argument, TableFilterEvent.</td>
+</tr>
+<tr valign="top">
+<td>filterValue</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines the input to the column non-specific filter, coming from the client, or from the app via a value binding.</td>
+</tr>
+<tr valign="top">
+<td>first</td><td>no</td><td>true</td><td><code>int</code></td><td>Zero-relative row number of the first row in the underlying data model to be displayed, or zero to start at the beginning of the data model. Default = '0'.</td>
+</tr>
+<tr valign="top">
+<td>groupedFilterResults</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enable to display all members of groups (as defined by ace:column groupBy) that contain a matching row during filtering.</td>
+</tr>
+<tr valign="top">
+<td>headerColumnOrdering</td><td>no</td><td>true</td><td><code>java.util.List</code></td><td>Defines a list of integers representing a rendering order for the Column children of the header columnGroup. This is separate from the columnOrdering property to maintain backwards compatibility and simplify application code when columns are added or removed. Both properties should be maintained in sync with each other.</td>
+</tr>
+<tr valign="top">
+<td>hiddenScrollableSizing</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enable the default handling of the scrollable table when rendered into a hidden page region. The table attempts to poll its hidden status, looking for when it is shown and then call the scrollable table sizing JavaScript. This can be expensive in environments of reduced JavaScript performance with many tables and a complex DOM. When this is disabled, upon revealing a hidden scrollable table, to ensure it is sized correctly the JS 'tableWidgetVar.resizeScrolling()' function must be called. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>id</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The component identifier for this component. This value must be unique within the closest parent component that is a naming container.</td>
+</tr>
+<tr valign="top">
+<td>lazy</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enables lazy loading. Lazy loading expects the 'value' property to reference an instance of LazyDataModel, an interface to support incremental fetching of table entities. Note that it is necessary that the data object implement custom hashCode() and equals() methods for advanced features to work correctly. see wiki for more information.</td>
+</tr>
+<tr valign="top">
+<td>page</td><td>no</td><td>true</td><td><code>int</code></td><td>Defines the index of the current page, beginning at 1.</td>
+</tr>
+<tr valign="top">
+<td>pageCount</td><td>no</td><td>true</td><td><code>java.lang.Integer</code></td><td>Defines the maximum number of individual page links to display in paginator. Default = '10'.</td>
+</tr>
+<tr valign="top">
+<td>paginator</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enables pagination on the table. Note that the paginator works by adjusting the 'first' and 'page' properties and that disabling the paginator will not return these properties to their defaults; instead leaving the table at the position that was paginated to. To return the table to the first page, 'first' must be set to 0, or 'page' must be set to 1.Alternately the table has a convenience method for this, DataTable.resetPagination().</td>
+</tr>
+<tr valign="top">
+<td>paginatorAlwaysVisible</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Defines whether the paginator always displays, even when fewer then 1 page full of items are displayed.</td>
+</tr>
+<tr valign="top">
+<td>paginatorPosition</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines the location of the paginator if enabled. Available options are top, bottom, or the default, both. Default = 'both'.</td>
+</tr>
+<tr valign="top">
+<td>paginatorTemplate</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines a coded string representing the controls available as part of the paginator. Default is: "{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}".</td>
+</tr>
+<tr valign="top">
+<td>renderRowTabindex</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Row tabindex is required for dataTable Find feature. If Find feature is not used and the tabindex interferes with tabbing through inputs in the table, set this to false. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>rendered</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Return true if this component (and its children) should be rendered during the Render Response phase of the request processing lifecycle. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>reorderableColumns</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enable reordering of the table columns via header dragging.</td>
+</tr>
+<tr valign="top">
+<td>resizableColumns</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enable resizing of the table columns via handles on the column headers.</td>
+</tr>
+<tr valign="top">
+<td>rowIndex</td><td>no</td><td>true</td><td><code>int</code></td><td>Zero-relative index of the row currently being accessed in the underlying DataModel, or -1 for no current row. Default = '0'.</td>
+</tr>
+<tr valign="top">
+<td>rowIndexVar</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The request-scope attribute (if any) under which the data object index for the current row will be exposed when iterating.</td>
+</tr>
+<tr valign="top">
+<td>rowSelectListener</td><td>no</td><td>true</td><td><code>javax.el.MethodExpression</code></td><td>MethodExpression reference called whenever a table element is selected. The method receives a single argument, SelectEvent.</td>
+</tr>
+<tr valign="top">
+<td>rowStateVar</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The request-scope attribute (if any) under which the table state object for the current row will be exposed when iterating. Default = 'rowState'.</td>
+</tr>
+<tr valign="top">
+<td>rowStyleClass</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Define css classes for each row of the dataTable. EL can be used in this attribute to produce conditional row styling.</td>
+</tr>
+<tr valign="top">
+<td>rowUnselectListener</td><td>no</td><td>true</td><td><code>javax.el.MethodExpression</code></td><td>MethodExpression reference called whenever a table element is deselected. The method receives a single argument, UnselectEvent.</td>
+</tr>
+<tr valign="top">
+<td>rows</td><td>no</td><td>true</td><td><code>int</code></td><td>The number of rows to be displayed, or zero to display the entire set of available rows. Default = '0'.</td>
+</tr>
+<tr valign="top">
+<td>rowsPerPageTemplate</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines a list of comma separated integer values that represent the options of "number of items per page" presented to the user. "all" is a special keyword that allowsa user to reset the pagination offset show all rows. The "all" option label is defined by the message key "org.icefaces.ace.component.datatable.ALL_LABEL". Any non-numerical value other than "all" will cause a NumberFormatException.</td>
+</tr>
+<tr valign="top">
+<td>scrollHeight</td><td>no</td><td>true</td><td><code>java.lang.Integer</code></td><td>Defines a fixed height for the scrollable table in pixels. Default = '100'.</td>
+</tr>
+<tr valign="top">
+<td>scrollWidthIE7</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>When using the DataTable scrollable mode, the IE7 configuration gives an equal width to evey column, and defaults to 100% width. This implies there is never a horizontal scrollbar for the table, unless a fixed width is used on the table or the container of the table. Ratherthan doing this via CSS, this property will apply (via JS) the given width and necessary overflow rules to the ancestors of the DataTable elements to produce a scrollbar.Other browsers will produce a horizontal scrollbar automatically when required and this property is ignored.</td>
+</tr>
+<tr valign="top">
+<td>scrollable</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enabling renders a table that overflows the fixed height and adds a scrollbar. Note, used in combination with multi-row headers defined by a ColumnGroupcomponent, it is assumed that every body column of the table will have a associated single column spanning header column on the bottom row of the multi-row header. This is to allow for appropriate sizing of the scrollable column and the associated header td. Note,in IE7, the CSS/DOM engine doesn't suport the dynamic adjustments required for this feature andinstead the feature uses a fixed, equal size for each column of the table.</td>
+</tr>
+<tr valign="top">
+<td>selectionMode</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines a code word indicating method of table element selection. Available values include: "multiple", "single", "cellblock", "cellrange" and "singlecell".</td>
+</tr>
+<tr valign="top">
+<td>singleSort</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Disables sorting for multiple columns at once. Sorting is enabled by the use of sortBy on ace:column components. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>stateMap</td><td>no</td><td>true</td><td><code>org.icefaces.ace.model.table.RowStateMap</code></td><td>Defines a map of your row data objects to UI states. Row-level features (selection, expansion, etc.) are manipulable through this repository. Note that it is necessary that the data object implement custom hashCode() and equals() methods for advanced features to work correctly. see wiki for more information.</td>
+</tr>
+<tr valign="top">
+<td>staticHeaders</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enable the default scrollable table behaviour of using JavaScript to size a table header and footer that are in a fixed position regardless of table body scrolling. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>style</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Custom inline CSS styles to use for this component. These styles are generally applied to the root DOM element of the component. This is intended for per-component basic style customizations. Note that due to browser CSS precedence rules, CSS rendered on a DOM element will take precedence over the external stylesheets used to provide the ThemeRoller theme on this component. If the CSS properties applied with this attribute do not affect the DOM element you want to style, you may need to create a custom theme styleClass for the theme CSS class that targets the particular DOM elements you wish to customize.</td>
+</tr>
+<tr valign="top">
+<td>styleClass</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Custom CSS style class(es) to use for this component. These style classes can be defined in your page or in a theme CSS file.</td>
+</tr>
+<tr valign="top">
+<td>tabIndex</td><td>no</td><td>true</td><td><code>java.lang.Integer</code></td><td>Defines a tabindex to be shared by all keyboard navigable elements of the table. This includes sort controls, filter fields and individual rows themselves. Default = '0'.</td>
+</tr>
+<tr valign="top">
+<td>toggleOnInvalidEdit</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enable the the client to revert the edited row with the default state following a failed edit. By default when validation fails during a row editing request the row remains in editing mode. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>value</td><td>no</td><td>true</td><td><code>java.lang.Object</code></td><td>The DataModel instance representing the data to which this component is bound, or a collection of data for which a DataModel instance is synthesized.</td>
+</tr>
+<tr valign="top">
+<td>var</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The request-scope attribute (if any) under which the data object for the current row will be exposed when iterating.</td>
+</tr>
+<tr valign="top">
+<td>widgetVar</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The JavaScript global component instance name. Must be unique among components on a page.</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="dataTable.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

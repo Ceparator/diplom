@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Add stop</title>
+    </h:head>
+    <h:body>
+        <f:view> 
+            <h:form> 
+                <h2> 
+                    <h:outputLabel value="Add new stop"/> 
+                </h2> 
+                <table> 
+                    <tr> 
+                        <th align="left"> 
+                            <h:outputLabel value="Stop's name" for="name"/> 
+                        </th> 
+                        <th> 
+                            <h:inputText id="name" value="#{addStopBean.stop.name}" required="true"> 
+                            </h:inputText> 
+                        </th> 
+                        <th> 
+                            <h:message for="name" style="color:red" /> 
+                        </th> 
+                    </tr> 
+                    <tr> 
+                        <th align="left"> 
+                            <h:outputLabel value="Stop's coordinate X" for="coordX"/> 
+                        </th> 
+                        <th> 
+                            <h:inputText id="coordX" value="#{addStopBean.stop.coordX}" required="true"> 
+                                <f:validateDoubleRange maximum="1000" minimum="-1000"/>
+                            </h:inputText> 
+                        </th> 
+                        <th> 
+                            <h:message for="coordX" style="color:red" /> 
+                        </th> 
+                    </tr> 
+                    <tr> 
+                        <th align="left"> 
+                            <h:outputLabel value="Stop's coordinate Y" for="coordY"/> 
+                        </th> 
+                        <th> 
+                            <h:inputText id="coordY" value="#{addStopBean.stop.coordY}" required="true"> 
+                                <f:validateDoubleRange maximum="1000" minimum="-1000"/>
+                            </h:inputText> 
+                        </th> 
+                        <th> 
+                            <h:message for="coordY" style="color:red" /> 
+                        </th> 
+                    </tr>  
+                    <tr> 
+                        <th align="right"> 
+                            <h:commandButton  value="Add stop" action="#{addStopBean.addNewStop()}"/> 
+                        </th> 
+                    </tr> 
+                    <tr> 
+                        <th align="right"> 
+                            <h:commandButton  value="Main page" immediate="true" action="/index.xhtml"/>
+                        </th> 
+                    </tr> 
+                </table>
+            </h:form> 
+        </f:view>
+    </h:body>
+</html>
+
+

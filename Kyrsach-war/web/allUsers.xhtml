@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components">
+    <h:head>
+        <title>All users</title>
+    </h:head>
+    <h:body>
+        <f:view> 
+            <h:form> 
+                <h2> 
+                    <h:outputLabel value="Users"/> 
+                </h2> 
+                <ace:dataTable value="#{userBean.getAllUsers()}"
+                               var="us">
+                    <ace:column headerText="Username" sortBy="#{us.username}"
+                                filterBy="#{us.username}" filterMatchMode="contains">
+                        <h:outputText value="#{us.username}"/>
+                    </ace:column>
+                    <ace:column headerText="Role">
+                        <h:outputText value="#{us.password}"/>
+                    </ace:column>
+                    <ace:column headerText="" rendered="#{request.isUserInRole('admin')}"> 
+                        <h:commandLink action="#{userBean.toEditUser(us)}" value="Edit user"/>
+                    </ace:column>
+                    <ace:column headerText="" rendered="#{request.isUserInRole('admin')}"> 
+                        <h:commandLink action="#{userBean.deleteUser(us.username)}" value="Delete user"/>
+                    </ace:column>
+                </ace:dataTable>
+                <br/><br/>
+                <h:commandButton value="Add new user" action="/addUser.xhtml"/>
+                <br/><br/>
+                <h:commandButton value="Home page" action="/index.xhtml"/>
+            </h:form> 
+        </f:view> 
+    </h:body>
+</html>
+

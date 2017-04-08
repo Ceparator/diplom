@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components">
+    <h:head>
+        <title>All routes</title>
+    </h:head>
+    <h:body>
+        <f:view> 
+            <tr> 
+            </tr> 
+            <h:form> 
+                <h2> 
+                    <h:outputLabel value="Routes"/> 
+                </h2> 
+                <ace:dataTable  value="#{routeBean.getAllRoutes()}"
+                                var="rt"
+                                selectionMode="single" stateMap="#{routeBean.stateMap}" rowStyleClass="#{rt.price le 3 ? 'old' : null}">
+                    <ace:column headerText="Id" sortBy="#{rt.idRoute} "
+                                rendered ="false" filterBy="#{rt.idRoute}" filterMatchMode="contains">
+                        <h:outputText value="#{rt.idRoute}"/>
+                    </ace:column>
+                    <ace:column headerText="Number" sortBy="#{rt.number}"
+                                filterBy="#{rt.number}" filterMatchMode="contains">
+                        <h:outputText value="#{rt.number}"/>
+                    </ace:column>
+                    <ace:column headerText="First stop" sortBy="#{rt.firstStop.name}"
+                                filterBy="#{rt.firstStop.name}" filterMatchMode="contains">
+                        <h:outputText value="#{rt.firstStop.name}"/>
+                    </ace:column>
+                    <ace:column headerText="Last stop" sortBy="#{rt.lastStop.name}"
+                                filterBy="#{rt.lastStop.name}" filterMatchMode="contains">
+                        <h:outputText value="#{rt.lastStop.name}"/>
+                    </ace:column>
+                    <ace:column headerText="Rating" sortBy="#{rt.rating} "
+                                rendered ="true" filterBy="#{rt.rating}" filterMatchMode="contains">
+                        <h:outputText value="#{rt.rating}"/>
+                    </ace:column>
+                    <ace:column headerText="Ticket price" sortBy="#{rt.price} "
+                                rendered ="true" filterBy="#{rt.price}" filterMatchMode="contains">
+                        <h:outputText value="#{rt.price}"/>
+                    </ace:column>
+                    <ace:column headerText="Transport number" sortBy="#{rt.transportNumber} "
+                                rendered ="true" filterBy="#{rt.transportNumber}" filterMatchMode="contains">
+                        <h:outputText value="#{rt.transportNumber}"/>
+                    </ace:column>
+                    <ace:column headerText="">
+                        <h:commandLink action="#{routeBean.redirectRouteInfo(rt.idRoute)}" value="Route scheme"/>
+                    </ace:column>
+                    <ace:column headerText="">
+                        <h:commandLink action="#{routeBean.redirectRouteList(rt)}" value="Route list"/>
+                    </ace:column>
+                    <ace:column headerText="">
+                        <h:commandLink action="#{routeBean.redirectRouteSchedule(rt)}" value="Route schedule"/>
+                    </ace:column>
+                    <f:facet name="footer">
+                        <h:commandButton rendered="#{request.isUserInRole('admin')}" value="Delete" actionListener="#{routeBean.actionListener}" />
+                    </f:facet>
+                </ace:dataTable>
+                <br/><br/>
+                <br/><br/>
+                <h:commandButton value="Back to main page" action="/index.xhtml"/> 
+                <br/><br/>
+                <h:commandButton value="Check stops" action="/allStops.xhtml"/>
+                <br/><br/>
+                <h:commandButton value="Add route" rendered="#{request.isUserInRole('admin')}"  action="/addRoute.xhtml"/> 
+            </h:form> 
+        </f:view>
+    </h:body>
+</html>
+
+

@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components">
+    <h:head>
+        <title>New routelist</title>
+    </h:head>
+    <h:body>
+        <f:view> 
+            <h:form id="form1" prependId="false"> 
+
+
+
+                <ace:autoCompleteEntry id="autoComplete"
+                                       value="#{transportBean.stringValue}"
+                                       rows="20" width="400"
+                                       filterMatchMode=""
+                                       label="Cities of the World:"
+                                       labelPosition="left">
+                    <f:selectItems value="#{transportBean.ids}"/>
+                </ace:autoCompleteEntry>
+                <!-- <h2 align="center"> 
+                     <h:outputLabel value="Add new routelist for route number #{routelistBean.route.number}"/> 
+                 </h2> 
+                 <h:panelGroup layout="block" id="mydiv">
+                     <h:form id="mydivForm">
+                         <table>
+                             <tbody>
+                                 <tr>
+                                     <th> Driver </th>
+                                     <th> Conductor </th>
+                                     <th> Transport </th>
+                                     <th> Shift </th>
+                                 </tr>
+                                 <tr>
+                                     <th> 
+                                         <ace:autoCompleteEntry id="driv"
+                                                                value="#{routelistBean.routelist.driver}"
+                                                                rows="20" width="400"
+                                                                filterMatchMode=""
+                                                                labelPosition="left"
+                                                                required="true"
+                                                                placeholder="name">
+                                             <f:selectItems value="#{userBean.getUsersByRole('driver')}"/>
+                                         </ace:autoCompleteEntry>
+                                     </th> 
+                                     <th> 
+                                         <ace:autoCompleteEntry id="conduc"
+                                                                value="#{routelistBean.routelist.conductor}"
+                                                                rows="20" width="400"
+                                                                filterMatchMode=""
+                                                                labelPosition="left"
+                                                                required="true"
+                                                                minChars="2"
+                                                                placeholder="name">
+                                             <f:selectItems value="#{userBean.getUsersByRole('conductor')}"/>
+                                         </ace:autoCompleteEntry>
+                                     </th>
+                                     <th> 
+                                         <ace:autoCompleteEntry id="tran"
+                                                                value="#{routelistBean.transport}"
+                                                                rows="20" width="400"
+                                                                filterMatchMode=""
+                                                                labelPosition="left"
+                                                                required="true"
+                                                                minChars="2"
+                                                                placeholder="serial number">
+                                             <f:selectItems value="#{transportBean.getAllTransports()}"/>
+                                             <f:validator binding="#{transportValidator}"/>
+                                             <ace:ajax event="valueChange" render="@all"/> 
+                                             <ace:ajax event="blur" render="@all"/>
+                                         </ace:autoCompleteEntry>
+                                     </th>
+                                     <th> 
+                                         <h:selectOneMenu id ="shft" value="#{routelistBean.routelist.idShift}" converter="#{shiftConverter}"> 
+                                             <f:selectItems value="#{shiftBean.getAllShifts()}" var="sht" 
+                                                            itemValue="#{sht}" itemLabel="#{sht.startTime} - #{sht.endTime}" /> 
+                                             <f:ajax execute="@this" render="driv conduc tran shft" />
+                                         </h:selectOneMenu> 
+                                     </th>
+                                     <th> 
+                                         <h:selectBooleanCheckbox value="#{routelistBean.routelist.fromFirst}" />
+                                     </th>
+                                 </tr>
+                                 <tr>
+                                     <h:message for="driv" style="color:red" /> 
+                                     <h:message for="conduc" style="color:red" /> 
+                                     <h:message for="tran" style="color:red" /> 
+                                     <h:message for="shif" style="color:red" /> 
+                                 </tr>
+                             </tbody>
+                         </table>
+                     </h:form>
+                 </h:panelGroup>
+                 <br/>
+                 <p>
+                     <h:commandButton  value="Add routelist" action="#{routelistBean.addNewRoutelist()}"/>
+                 </p>
+ 
+                 <h3 align="left"> 
+                     <h:outputLabel value="Current routelist"/> 
+                 </h3> 
+ 
+                 <ace:dataTable value="#{routelistBean.getRouteList(routeBean.route)}"
+                                var="rl">
+                     <ace:column headerText="Id" sortBy="#{rl.idRouteList} "
+                                 rendered ="false" filterBy="#{rl.idRouteList}" filterMatchMode="contains">
+                         <h:outputText value="#{rl.idRouteList}"/>
+                     </ace:column>
+                     <ace:column headerText="Driver" sortBy="#{rl.driver}"
+                                 filterBy="#{rl.driver}" filterMatchMode="contains">
+                         <h:outputText value="#{rl.driver}"/>
+                     </ace:column>
+                     <ace:column headerText="Conductor" sortBy="#{rl.conductor}"
+                                 filterBy="#{rl.conductor}" filterMatchMode="contains">
+                         <h:outputText value="#{rl.conductor}"/>
+                     </ace:column>
+                     <ace:column headerText="Transport" sortBy="#{rl.idTransport.serialNumber}"
+                                 filterBy="#{rl.idTransport.serialNumber}" filterMatchMode="contains">
+                         <h:outputText value="#{rl.idTransport.serialNumber}"/>
+                     </ace:column>
+                     <ace:column headerText="Start" filterBy="#{rl.idShift.startTime}" filterMatchMode="contains">
+                         <h:outputText value="#{rl.idShift.startTime}">
+                             <f:convertDateTime pattern="HH:mm" />
+                         </h:outputText>
+                     </ace:column>
+                     <ace:column headerText="Finish" filterBy="#{rl.idShift.endTime}" filterMatchMode="contains">
+                         <h:outputText value="#{rl.idShift.endTime}">
+                             <f:convertDateTime pattern="HH:mm" />
+                         </h:outputText>
+                     </ace:column>
+                     <ace:column headerText="Valid" filterBy="#{rl.isValid}" filterMatchMode="contains">
+                         <h:outputText value="#{rl.isValid}"/>
+                     </ace:column>
+                     <ace:column headerText="From first" filterBy="#{rl.fromFirst}" filterMatchMode="contains">
+                         <h:outputText value="#{rl.fromFirst}"/>
+                     </ace:column>
+                     <ace:column rendered="#{request.isUserInRole('admin') or request.isUserInRole('dispatcher')}" headerText="" > 
+                         <h:commandLink immediate="true" action="#{routelistBean.ToEditRoutelist(rl)}" value="Edit routelist"/>
+                     </ace:column>
+                     <ace:column rendered="#{request.isUserInRole('admin')}" headerText=""> 
+                         <h:commandLink immediate="true" action="#{routelistBean.deleteRoutelist(rl)}" value="Delete routelist"/>
+                     </ace:column>
+                 </ace:dataTable>
+                 <br/>
+                 <p>
+                     <h:commandButton immediate="true" value="Complete creation" action="#{routeBean.redirectRouteList(routelistBean.route)}"/>
+                 </p>-->
+            </h:form> 
+        </f:view>
+    </h:body>
+</html>

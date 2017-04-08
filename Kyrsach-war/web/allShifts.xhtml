@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components">
+    <h:head>
+        <title>All shifts</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form> 
+                <h2> 
+                    <h:outputLabel value="Shifts"/> 
+                </h2>
+                <ace:dataTable var="shf" value="#{shiftBean.getAllShifts()}">
+                    <ace:column headerText="Id" rendered="false">
+                        <h:outputText value="#{shf.idShift}" />
+                    </ace:column>
+                    <ace:column headerText="Start time" sortBy="#{shf.startTime}" filterMatchMode="contains">
+                        <h:outputText value="#{shf.startTime}" />
+                        <f:convertDateTime pattern="HH-mm" />
+                    </ace:column>
+                    <ace:column headerText="End time" sortBy="#{shf.endTime}" filterMatchMode="contains">
+                        <h:outputText value="#{shf.endTime}" />
+                        <f:convertDateTime pattern="HH-mm" />
+                    </ace:column>
+                    <ace:column headerText="" rendered="#{request.isUserInRole('admin') or request.isUserInRole('dispatcher')}"> 
+                        <h:commandLink action="#{shiftBean.ToEditShift(shf)}" value="Edit shift"/>
+                    </ace:column>
+                    <ace:column headerText="" rendered="#{request.isUserInRole('admin')}"> 
+                        <h:commandLink action="#{shiftBean.deleteShift(shf)}" value="Delete shift"/>
+                    </ace:column>
+                </ace:dataTable>
+                <br/><br/>
+                <h:commandButton value="Add new shift" rendered="#{request.isUserInRole('admin')}" action="/addShift.xhtml"/>
+                <br/><br/>
+                <h:commandButton value="Home page" action="/index.xhtml"/>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>

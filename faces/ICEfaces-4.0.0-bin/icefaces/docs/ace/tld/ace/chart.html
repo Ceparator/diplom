@@ -1,0 +1,220 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>chart
+          (ICEfaces ACE Components 4.0.0 Tag Library Reference)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="chart (ICEfaces ACE Components 4.0.0 Tag Library Reference)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="chart.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">ICEfaces ACE Components</font>
+<br>
+            Tag chart</h2>
+<hr>Render a HTML &lt;canvas&rt; data visualization using a Java interface to the jqPlot charting API. A List of ChartSeries subclasses define the data and its representation in the visualization.<p>For more information, see the <a href="http://wiki.icefaces.org/display/ICE/Chart">Chart Wiki Documentation</a>.</p><hr><table border='1' cellpadding='3' cellspacing='0' width='100%'><tr bgcolor='#CCCCFF' class='TableHeadingColor'><td colspan='4'><font size='+2'><b>Client Events</b></font></td></tr><tr><td><b>Name</b></td><td><b>Description</b></td><td><b>Supported Classes for Argument</b></td><td><b>Default Event Scopes</b></td><tr><tr><td>click</td><td>Fired when data point is clicked plot.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>dragStart</td><td>Fired when a drag has begun on a particular drag-enabled plot data point.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>dragStop</td><td>Fired when a drag has ceased on a particular drag-enabled plot data point.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>mouseInData</td><td>Fired when the mouse is inside a filled plot region.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>mouseOutData</td><td>Fired when the mouse is outside a filled plot region.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>showHighlighter</td><td>Fired when the highlighter is being displayed by the mouse being near an enabled data point.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>hideHighlighter</td><td>Fired when the highlighter is being hidden by the mouse moving away from an enabled data point.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr></table><i>Client events can be used with Client Behaviors and the ace:ajax tag.</i><br><br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>org.icefaces.ace.component.chart.ChartTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>animated</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enables the draw animation behaviour of the chart. By default is enabled for all browsers but IE8 and lower for performanceconcerns.</td>
+</tr>
+<tr valign="top">
+<td>binding</td><td>no</td><td>true</td><td><code>javax.el.ValueExpression</code></td><td>Using an EL expression, bind the component reference to a bean property, so that the component may be accessed in the bean.</td>
+</tr>
+<tr valign="top">
+<td>cursor</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enable a crosshair cursor on the chart.</td>
+</tr>
+<tr valign="top">
+<td>defaultAxesConfig</td><td>no</td><td>true</td><td><code>org.icefaces.ace.component.chart.Axis</code></td><td>Define a Axis whose configuration is used where other axes have not made an explicit configuration.</td>
+</tr>
+<tr valign="top">
+<td>defaultSeriesColors</td><td>no</td><td>true</td><td><code>java.lang.String[]</code></td><td>Allows users to specify default color series for all graphs, rather than by specifying per chart. See 'seriesColors' attribute in CartesianSeries to override the colors used per chart. If there are more series than colors, colors will wrap around and start at the beginning again. If empty will use default colors from jqPlot.</td>
+</tr>
+<tr valign="top">
+<td>defaultSeriesConfig</td><td>no</td><td>true</td><td><code>org.icefaces.ace.model.chart.ChartSeries</code></td><td>Define a ChartSeries whose configuration is used where other ChartSeries have not made an explicit configuration. The data of this ChartSeries is irrelevant. If defined, this ChartSeries should explicitly have the typefield set, this will be used as the default type for all series which have not explicitly defined a type. If undefined the default type is determined by theChartSeries.getDefaultType() of the first attached series.</td>
+</tr>
+<tr valign="top">
+<td>height</td><td>no</td><td>true</td><td><code>java.lang.Integer</code></td><td>Define the height of the entire chart region in pixels.</td>
+</tr>
+<tr valign="top">
+<td>hiddenInitPolling</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enable the default handling of the chart when rendered into a hidden page region. Thechart polls its hidden status, looking for when it is shown, and then completes its initialization.This can be expensive in environments of reduced JavaScript performance with many charts and a complex DOM.When this is disabled, upon revealing a chart, to ensure it is correctly displayed, 'chartWidgetvar.replot()' must be called. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>highlighter</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enables drawing an info string at the cursor position when hovering at data points. Default configuration displays x, y values.</td>
+</tr>
+<tr valign="top">
+<td>highlighterAxes</td><td>no</td><td>true</td><td><code>org.icefaces.ace.component.chart.HighlighterTooltipAxes</code></td><td>Defines the point values passed to the highlighter tooltip, either X, Y, XY or YX. Default is XY.</td>
+</tr>
+<tr valign="top">
+<td>highlighterBringSeriesToFront</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enables the highlighted series being temporarily reordered to be entirely visible.</td>
+</tr>
+<tr valign="top">
+<td>highlighterFormatString</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines a format string populated with the x, y values indicated by the highlighterAxes. Takes C-style string format options ex. 'Date: %s, number of cats: %d'</td>
+</tr>
+<tr valign="top">
+<td>highlighterLocation</td><td>no</td><td>true</td><td><code>org.icefaces.ace.component.chart.Location</code></td><td>Defines the direction the highlighter tooltip is located relative to the cursor. Is 'NW' by default.</td>
+</tr>
+<tr valign="top">
+<td>highlighterShowMarker</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enables drawing an 'active' styled point marker while the highlighter tooltip is shown. Is true by default.</td>
+</tr>
+<tr valign="top">
+<td>highlighterYValueCount</td><td>no</td><td>true</td><td><code>java.lang.Integer</code></td><td>Defines how many Y values a highlighter should expect in the data points array. Typically this is 1. Certain plots, like OHLC, will have more y values in each data point array and will need this property adjusted to parse correctly.</td>
+</tr>
+<tr valign="top">
+<td>id</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The component identifier for this component. This value must be unique within the closest parent component that is a naming container.</td>
+</tr>
+<tr valign="top">
+<td>imageExportListener</td><td>no</td><td>true</td><td><code>javax.el.MethodExpression</code></td><td>MethodExpression reference called whenever an exportToServer() call is made for this chart in the client side. The method receives a single argument, ChartImageExportEvent. The bytes representing the PNG image are obtained as a byte array by calling getBytes() on the ChartImageExportEvent object.</td>
+</tr>
+<tr valign="top">
+<td>legend</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enabling displays the legend.</td>
+</tr>
+<tr valign="top">
+<td>legendLocation</td><td>no</td><td>true</td><td><code>org.icefaces.ace.component.chart.Location</code></td><td>Defines the location of legend relative to the bounds of the chart. All of the cardinal directions are available in the following format: N, NE, E, SE, S, etc.</td>
+</tr>
+<tr valign="top">
+<td>legendPlacement</td><td>no</td><td>true</td><td><code>org.icefaces.ace.component.chart.LegendPlacement</code></td><td>Defines the placement of the legend relative to the content of the chart. The available configurations are: INSIDE_GRID, OUTSIDE_GRID and OUTSIDE</td>
+</tr>
+<tr valign="top">
+<td>pointChangeListener</td><td>no</td><td>true</td><td><code>javax.el.MethodExpression</code></td><td>MethodExpression reference called whenever a series element is dragged to a new x or y value. The method receives a single argument, PointValueChangeEvent.</td>
+</tr>
+<tr valign="top">
+<td>rendered</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Return true if this component (and its children) should be rendered during the Render Response phase of the request processing lifecycle. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>selectListener</td><td>no</td><td>true</td><td><code>javax.el.MethodExpression</code></td><td>MethodExpression reference called whenever a series element is selected. The method receives a single argument, SeriesSelectionEvent.</td>
+</tr>
+<tr valign="top">
+<td>showTooltip</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enable display of a legend regarding the coordinates of the cursor. The 'cursor' property must be enabled to use this property.</td>
+</tr>
+<tr valign="top">
+<td>stackSeries</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enables a stack or "mountain" plot. Not all types of series may support this mode. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>style</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Define CSS inline style for the chart container.</td>
+</tr>
+<tr valign="top">
+<td>title</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Define a title of the entire chart.</td>
+</tr>
+<tr valign="top">
+<td>value</td><td>no</td><td>true</td><td><code>java.lang.Object</code></td><td>Define an individual instance or List of ChartSeries objects to draw on this plot.</td>
+</tr>
+<tr valign="top">
+<td>widgetVar</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The JavaScript global component instance name. Must be unique among components on a page.</td>
+</tr>
+<tr valign="top">
+<td>width</td><td>no</td><td>true</td><td><code>java.lang.Integer</code></td><td>Define the width of the entire chart region in pixels.</td>
+</tr>
+<tr valign="top">
+<td>x2Axis</td><td>no</td><td>true</td><td><code>org.icefaces.ace.component.chart.Axis</code></td><td>Defines the configuration of the x1 axis. Attempts are made to interpret a configuration if undefined.</td>
+</tr>
+<tr valign="top">
+<td>xAxis</td><td>no</td><td>true</td><td><code>org.icefaces.ace.component.chart.Axis</code></td><td>Defines the configuration of the x axis. Attempts are made to interpret a configuration if undefined.</td>
+</tr>
+<tr valign="top">
+<td>yAxes</td><td>no</td><td>true</td><td><code>org.icefaces.ace.component.chart.Axis[]</code></td><td>Defines the configuration of the y axes (up to 9). Attempts are made to interpret a configuration if undefined.</td>
+</tr>
+<tr valign="top">
+<td>zoom</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enable click+drag selection of a range on the chart using the cursor. The 'cursor' property must be enabled to use this property.</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="chart.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

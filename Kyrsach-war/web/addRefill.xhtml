@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Refill transport</title>
+    </h:head>
+    <h:body>
+        <f:view> 
+            <h:form> 
+                <h2> 
+                    <h:outputLabel value="Refill transport"/> 
+                </h2> 
+                <table> 
+                    <tr> 
+                        <th align="left"> 
+                            <h:outputLabel value="Transport's serial number" for="sn"/> 
+                        </th> 
+                        <th> 
+                            <h:selectOneMenu value="#{viewRefillBean.transport}" converter="#{transportConverter}"> 
+                                <f:selectItems value="#{transportBean.getAllTransports()}" var="tra" 
+                                               itemValue="#{tra}" itemLabel="#{tra.serialNumber}" /> 
+                                <f:ajax execute="@this" render="cap ft fp fv" />
+                            </h:selectOneMenu> 
+                        </th> 
+                    </tr> 
+                    <tr> 
+                        <th align="left"> 
+                            <h:outputLabel value="Transport fuel capacity in litres" for="cap"/> 
+                        </th>
+                        <th> 
+                            <h:inputText id="cap" readonly="true" value="#{viewRefillBean.transport.fuelCapacity}"> 
+                            </h:inputText>
+                        </th> 
+                    </tr> 
+                    <tr> 
+                        <th align="left"> 
+                            <h:outputLabel value="Transport fuel type" for="ft"/> 
+                        </th> 
+                        <th> 
+                            <h:inputText readonly="true" id="ft" value="#{viewRefillBean.transport.idFuel.fuelNumber}"> 
+                            </h:inputText>
+                        </th> 
+                    </tr>
+                    <tr> 
+                        <th align="left"> 
+                            <h:outputLabel value="Fuel price" for="fp"/> 
+                        </th> 
+                        <th> 
+                            <h:inputText readonly="true" id="fp" value="#{viewRefillBean.transport.idFuel.fuelPrice}"> 
+                            </h:inputText>
+                        </th> 
+                    </tr>
+                    <tr> 
+                        <th align="left"> 
+                            <h:outputLabel value="Fuel volume" for="fv"/> 
+                        </th> 
+                        <th> 
+                            <h:inputText id="fv" value="#{viewRefillBean.refill.volume}" required="true"> 
+                                <f:validateLongRange maximum="#{viewRefillBean.transport.fuelCapacity}" minimum="1"/>
+                            </h:inputText> 
+                        </th> 
+                        <th> 
+                            <h:message for="fv" style="color:red" /> 
+                        </th> 
+                    </tr> 
+                    <tr> 
+                        <th align="right"> 
+                            <h:commandButton  value="Add refill" action="#{viewRefillBean.addNewRefill()}"/> 
+                        </th> 
+                    </tr>
+                    <tr> 
+                        <th align="right"> 
+                            <h:commandButton  value="Main page" immediate="true" action="/index.xhtml"/>
+                        </th> 
+                    </tr> 
+                </table>
+            </h:form> 
+        </f:view>
+    </h:body>
+</html>

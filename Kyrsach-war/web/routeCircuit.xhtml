@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components"
+      xmlns:m="http://code.google.com/p/gmaps4jsf/"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Route information</title>
+
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h2>
+                    <h:outputLabel value="Route info"/>
+                </h2> 
+                <h3>
+                    <h:outputLabel value="Route first scheme"/>
+                </h3>
+                <ace:dataTable value="#{routeBean.getFirstCircuit(routeBean.numberRoute)}"
+                               var="rt">
+                    <ace:column headerText="Id" sortBy="#{rt.idCircuit} "
+                                rendered ="false" filterBy="#{rt.idCircuit}" filterMatchMode="contains">
+                        <h:outputText value="#{rt.idCircuit}"/>
+                    </ace:column>
+                    <ace:column headerText="Stop name" sortBy="#{rt.idStop.name}"
+                                filterBy="#{rt.idStop.name}" filterMatchMode="contains">
+                        <h:outputText value="#{rt.idStop.name}"/>
+                    </ace:column>
+                    <ace:column headerText="Coordinate X" sortBy="#{rt.idStop.coordX}"
+                                filterBy="#{rt.idStop.coordX}" filterMatchMode="contains">
+                        <h:outputText value="#{rt.idStop.coordX}"/>
+                    </ace:column>
+                    <ace:column headerText="Coordinate Y" sortBy="#{rt.idStop.coordY}"
+                                filterBy="#{rt.idStop.coordY}" filterMatchMode="contains">
+                        <h:outputText value="#{rt.idStop.coordY}"/>
+                    </ace:column>
+                    <ace:column rendered="#{request.isUserInRole('admin')}" headerText="" > 
+                        <h:commandLink action="#{circuitBean.DeleteCircuit(rt.idCircuit)}" value="Delete route stop"/>
+                    </ace:column>
+                    <ace:column rendered="#{request.isUserInRole('admin')}" headerText=""> 
+                        <h:commandLink action="#{circuitBean.ToEditCircuit(rt.idCircuit, rt.stopNumber, rt.idStop, routeBean.getFirstCircuit(routeBean.numberRoute).size())}" value="Edit route stop"/>
+                    </ace:column>
+                </ace:dataTable>
+                <br/><br/>
+                <h:commandButton  value="Add new circuit to the first scheme" rendered="#{request.isUserInRole('admin')}" action="#{circuitBean.ToAddFirstCircuit(routeBean.numberRoute, routeBean.getFirstCircuit(routeBean.numberRoute).size())}"/>
+                <br/><br/>
+                <h3>
+                    <h:outputLabel value="Route second scheme"/>
+                </h3>
+                <ace:dataTable value="#{routeBean.getSecondCircuit(routeBean.numberRoute)}"
+                               var="rtt">
+                    <ace:column headerText="Id" sortBy="#{rtt.idCircuit} "
+                                rendered ="false" filterBy="#{rtt.idCircuit}" filterMatchMode="contains">
+                        <h:outputText value="#{rtt.idCircuit}"/>
+                    </ace:column>
+                    <ace:column headerText="Stop name" sortBy="#{rtt.idStop.name}"
+                                filterBy="#{rtt.idStop.name}" filterMatchMode="contains">
+                        <h:outputText value="#{rtt.idStop.name}"/>
+                    </ace:column>
+                    <ace:column headerText="Coordinate X" sortBy="#{rtt.idStop.coordX}"
+                                filterBy="#{rtt.idStop.coordX}" filterMatchMode="contains">
+                        <h:outputText value="#{rtt.idStop.coordX}"/>
+                    </ace:column>
+                    <ace:column headerText="Coordinate Y" sortBy="#{rtt.idStop.coordY}"
+                                filterBy="#{rtt.idStop.coordY}" filterMatchMode="contains">
+                        <h:outputText value="#{rtt.idStop.coordY}"/>
+                    </ace:column>
+                    <ace:column headerText="" rendered="#{request.isUserInRole('admin')}"> 
+                        <h:commandLink action="#{circuitBean.DeleteCircuit(rtt.idCircuit)}" value="Delete route stop"/>
+                    </ace:column>
+                    <ace:column headerText="" rendered="#{request.isUserInRole('admin')}"> 
+                        <h:commandLink action="#{circuitBean.ToEditCircuit(rtt.idCircuit, rtt.stopNumber, rtt.idStop, routeBean.getFirstCircuit(routeBean.numberRoute).size())}" value="Edit route stop"/>
+                    </ace:column>
+                </ace:dataTable>
+                <br/><br/>
+                <h:commandButton  value="Add new circuit to the second scheme" rendered="#{request.isUserInRole('admin')}" action="#{circuitBean.ToAddSecondCircuit(routeBean.numberRoute, routeBean.getSecondCircuit(routeBean.numberRoute).size())}"/>
+                <br/><br/>
+                <h:commandButton value="All routes" action="/allRoutes.xhtml"/> 
+
+
+
+                <ace:gMap id="gMapMarker"  style="width: 675px; height: 500px" latitude="56.156442" longitude="40.415704" zoomLevel="3">
+                    <ui:repeat var="loc" value="#{routeBean.getFirstCircuit(routeBean.numberRoute)}">
+                        <ace:gMapMarker latitude="#{loc.idStop.coordX}" longitude="#{loc.idStop.coordY}" options="icon:'https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/Product_Help/ru_RU/PUBLIC_USERS/PP203/IL_BlueDot.png'"/>
+                    </ui:repeat>
+                    <ui:repeat var="loc2" value="#{routeBean.getSecondCircuit(routeBean.numberRoute)}">
+                        <ace:gMapMarker latitude="#{loc2.idStop.coordX}" longitude="#{loc2.idStop.coordY}" options="icon:'http://eko-zdrav.ru/wp-content/uploads/2012/12/03_d.100x100.png'"/>
+                    </ui:repeat>
+                </ace:gMap>
+
+                <!--<m:map width="500px" height="500px" latitude="56.156442" longitude="40.415704">    
+                
+
+                
+                    <ui:repeat var="loc" value="#{routeBean.getFirstCircuit(routeBean.numberRoute)}">
+                        <m:marker latitude="#{loc.idStop.coordX}" longitude="#{loc.idStop.coordY}">
+                            <m:icon imageURL="https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/Product_Help/ru_RU/PUBLIC_USERS/PP203/IL_BlueDot.png"/>
+                        </m:marker>
+                    </ui:repeat>
+                    <ui:repeat var="loc2" value="#{routeBean.getSecondCircuit(routeBean.numberRoute)}">
+                        <m:marker latitude="#{loc2.idStop.coordX}" longitude="#{loc2.idStop.coordY}">
+                            <m:icon imageURL="http://eko-zdrav.ru/wp-content/uploads/2012/12/03_d.100x100.png"/>
+                        </m:marker>
+                    </ui:repeat>
+                </m:map> -->
+            </h:form>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD4wl6QD5kkJKjaUOzqEEWoTD_lx-NFOg"
+            type="text/javascript"></script>
+        </f:view>
+    </h:body>
+</html>

@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <locale-config>
+        <default-locale>ru</default-locale>
+    </locale-config>
+    
+    
+    <managed-bean>
+        <managed-bean-name>usernameValidator</managed-bean-name>
+        <managed-bean-class>Validators.UsernameValidator</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>oldPasswordValidator</managed-bean-name>
+        <managed-bean-class>Validators.OldPasswordValidator</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>newPasswordValidator</managed-bean-name>
+        <managed-bean-class>Validators.NewPasswordValidator</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>fuelBean</managed-bean-name>
+        <managed-bean-class>ManageBeans.FuelBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>refillBean</managed-bean-name>
+        <managed-bean-class>ManageBeans.RefillBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>repairBean</managed-bean-name>
+        <managed-bean-class>ManageBeans.RepairBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>healthBean</managed-bean-name>
+        <managed-bean-class>ManageBeans.HealthBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>routelistBean</managed-bean-name>
+        <managed-bean-class>ManageBeans.RoutelistBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>fuelConverter</managed-bean-name>
+        <managed-bean-class>Validators.FuelConverter</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>shiftBean</managed-bean-name>
+        <managed-bean-class>ManageBeans.ShiftBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>transportConverter</managed-bean-name>
+        <managed-bean-class>Validators.TransportConverter</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>shiftConverter</managed-bean-name>
+        <managed-bean-class>Validators.ShiftConverter</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>transportValidator</managed-bean-name>
+        <managed-bean-class>Validators.TransportValidator</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>viewRefillBean</managed-bean-name>
+        <managed-bean-class>ManageBeans.viewRefillBean</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+</faces-config>

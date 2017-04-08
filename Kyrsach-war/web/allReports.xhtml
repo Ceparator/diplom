@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Reports</title>
+    </h:head>
+    <h:body>
+        <f:view> 
+            <h:form>
+                <c:if test="#{request.isUserInRole('admin') or request.isUserInRole('dispatcher')}">
+                    <h2> 
+                        <h:outputLabel value="Reports"/> 
+                    </h2> 
+                    <ace:dataTable value="#{reportBean.getAllReports()}"
+                                   var="rep"
+                                   stateMap="#{reportBean.stateMap}"  
+                                   selectionMode="multiple">
+                        <ace:column headerText="Id" sortBy="#{rep.idReport} "
+                                    rendered ="false" filterBy="#{rep.idReport}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.idReport}"/>
+                        </ace:column>
+                        <ace:column headerText="Route" sortBy="#{rep.routeNumber}"
+                                    filterBy="#{rep.routeNumber}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.routeNumber}"/>
+                        </ace:column>
+                        <ace:column headerText="Tickets number" sortBy="#{rep.tickets}"
+                                    filterBy="#{rep.tickets}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.tickets}"/>
+                        </ace:column>
+                        <ace:column headerText="Date" sortBy="#{rep.vremya}"
+                                    filterBy="#{rep.vremya}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.vremya}">
+                                <f:convertDateTime pattern="dd-MM-yyyy" />
+                            </h:outputText>
+                        </ace:column>
+                        <ace:column headerText="Shift" filterBy="#{rep.shiftTime}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.shiftTime}"/>
+                        </ace:column>
+                        <ace:column headerText="Sum" sortBy="#{rep.summa}"
+                                    filterBy="#{rep.summa}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.summa}"/>
+                        </ace:column>
+                        <ace:column headerText="Occupancy" sortBy="#{rep.occupancy}"
+                                    filterBy="#{rep.occupancy}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.occupancy}"/>
+                        </ace:column>
+                        <ace:column headerText="Reporter" sortBy="#{rep.username.username}"
+                                    filterBy="#{rep.username.username}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.username.username}"/>
+                        </ace:column>
+                    </ace:dataTable>
+                    <br/><br/>
+                    <h:commandButton value="Look at the routes" action="/allRoutes.xhtml"/>
+                    <br/><br/>
+                    <h:commandButton value="Delete reports" rendered="#{request.isUserInRole('admin')}" actionListener="#{reportBean.actionListener}"/>  
+                </c:if>
+
+
+                <c:if test="#{request.isUserInRole('conductor')}">
+                    <h2> 
+                        <h:outputLabel value="My reports"/> 
+                    </h2> 
+                    <ace:dataTable value="#{reportBean.getUserReports()}"
+                                   var="rep"
+                                   stateMap="#{reportBean.stateMap}"  
+                                   selectionMode="multiple">
+                        <ace:column headerText="Id" sortBy="#{rep.idReport} "
+                                    rendered ="false" filterBy="#{rep.idReport}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.idReport}"/>
+                        </ace:column>
+                        <ace:column headerText="Route" sortBy="#{rep.routeNumber}"
+                                    filterBy="#{rep.routeNumber}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.routeNumber}"/>
+                        </ace:column>
+                        <ace:column headerText="Tickets number" sortBy="#{rep.tickets}"
+                                    filterBy="#{rep.tickets}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.tickets}"/>
+                        </ace:column>
+                        <ace:column headerText="Date" sortBy="#{rep.vremya}"
+                                    filterBy="#{rep.vremya}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.vremya}"/>
+                        </ace:column>
+                        <ace:column headerText="Shift" filterBy="#{rep.shiftTime}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.shiftTime}"/>
+                        </ace:column>
+                        <ace:column headerText="Sum" sortBy="#{rep.summa}"
+                                    filterBy="#{rep.summa}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.summa}"/>
+                        </ace:column>
+                        <ace:column headerText="Occupancy" sortBy="#{rep.occupancy}"
+                                    filterBy="#{rep.occupancy}" filterMatchMode="contains">
+                            <h:outputText value="#{rep.occupancy}"/>
+                        </ace:column>
+                        <ace:column headerText="">
+                            <h:commandLink action="#{reportBean.toEditReport(rep)}" value="Edit report"/>
+                        </ace:column>
+                    </ace:dataTable>
+                    <br/><br/>
+                    <h:commandButton value="Look at the routes" action="/allRoutes.xhtml"/>
+                    <br/><br/>
+                    <h:commandButton value="Add report" rendered="#{reportBean.getUserRoute().size() ne 0}" action="#{reportBean.toAddReport()}" />
+                </c:if>
+            </h:form> 
+        </f:view> 
+    </h:body>
+</html>
+

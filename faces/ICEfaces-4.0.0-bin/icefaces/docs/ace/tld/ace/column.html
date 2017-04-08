@@ -1,0 +1,193 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>column
+          (ICEfaces ACE Components 4.0.0 Tag Library Reference)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="column (ICEfaces ACE Components 4.0.0 Tag Library Reference)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="column.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">ICEfaces ACE Components</font>
+<br>
+            Tag column</h2>
+<hr><p>Component that represents a column in an ace:dataTable.</p><p>For more information, see the <a href="http://wiki.icefaces.org/display/ICE/Column">Column Wiki Documentation</a>.</p><br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>org.icefaces.ace.component.column.ColumnTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>binding</td><td>no</td><td>true</td><td><code>javax.el.ValueExpression</code></td><td>Using an EL expression, bind the component reference to a bean property, so that the component may be accessed in the bean.</td>
+</tr>
+<tr valign="top">
+<td>colspan</td><td>no</td><td>true</td><td><code>int</code></td><td>Defines the number of columns the rendered cell spans. Only significant to Column components within a column group. Default = '1'.</td>
+</tr>
+<tr valign="top">
+<td>configurable</td><td>no</td><td>true</td><td><code>boolean</code></td><td>When disabled, this column is excluded from the list of columns available for configuration on a TableConfigPanel component. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>filterBy</td><td>no</td><td>true</td><td><code>java.lang.Object</code></td><td>Defines a ValueExpression of the value of this row to use when filtering this column. Setting this attribute, or the "value" attribute for a column enables filtering.</td>
+</tr>
+<tr valign="top">
+<td>filterMatchMode</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines the method of filter comparison used, default is "startsWith". Types available include: "contains", "exact", "startsWith" and "endsWith". Default = 'startsWith'.</td>
+</tr>
+<tr valign="top">
+<td>filterOptions</td><td>no</td><td>true</td><td><code>java.lang.Object</code></td><td>Defines a collection of SelectItem objects for use as filter choices.</td>
+</tr>
+<tr valign="top">
+<td>filterStyle</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines additional CSS rules to be applied to the filter text input.</td>
+</tr>
+<tr valign="top">
+<td>filterStyleClass</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines supplementary CSS classes to add to those already applied on this component.</td>
+</tr>
+<tr valign="top">
+<td>filterValue</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines the string input filtering this column, coming from the client, or from the application via a value binding.</td>
+</tr>
+<tr valign="top">
+<td>footerText</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines a plain text footer with less effort than adding a facet.</td>
+</tr>
+<tr valign="top">
+<td>groupBy</td><td>no</td><td>true</td><td><code>java.lang.Object</code></td><td>Defines a value expression representing the value of this column per row when determining if the values of this column in sibling rows are equal. If they are equal, span the rows witha single column cell.</td>
+</tr>
+<tr valign="top">
+<td>headerText</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Defines a plain text header with less effort than adding a facet. Note that even when using a header facet this property should also be set as a short-form label for the column that will be used within the ace:tableConfigPanel.</td>
+</tr>
+<tr valign="top">
+<td>id</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The component identifier for this component. This value must be unique within the closest parent component that is a naming container.</td>
+</tr>
+<tr valign="top">
+<td>lazyColumnKey</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Specifies a string that will be used to identify this column when working in lazy mode. This string will be passed as a key of the filters map and will be returned from SortCriteria.getPropertyName() in the LazyDataModel.load() method. If this attribute is defined, then this value will be used instead of the value obtained by parsing the EL expressions of the sortyBy and filterBy attributes. This attribute is useful when using complex and/or dynamic EL expressions that can't be parsed nor resolved at render time, such as when using c:forEach to define the columns.</td>
+</tr>
+<tr valign="top">
+<td>pinningOrder</td><td>no</td><td>true</td><td><code>java.lang.Integer</code></td><td>Define the position of this column in the pinned column region when column pinning and scrolling are enabled at the table level. Having a value in this field indicates a column is pinned. 1 indexed.</td>
+</tr>
+<tr valign="top">
+<td>rendered</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Return true if this component (and its children) should be rendered during the Render Response phase of the request processing lifecycle. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>reorderable</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Enables per-column control of column ordering when the attribute ("reorderableColumns") is true at the table level. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>rowspan</td><td>no</td><td>true</td><td><code>int</code></td><td>Defines the number of rows the rendered cell spans. Only significant to Column components within a column group. Default = '1'.</td>
+</tr>
+<tr valign="top">
+<td>sortAscending</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Defines the direction of column values during sorting. The column directions incoming from the client during a sort request overwrite any set by the application. Processing the sorted columns is done by the component whenever a client edits a sort control or the application calls table.applySorting(). Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>sortBy</td><td>no</td><td>true</td><td><code>java.lang.Object</code></td><td>Defines a value expression representing the value of this column per row when sorting. Setting this attribute, or the "value" attribute for a column enables sorting.</td>
+</tr>
+<tr valign="top">
+<td>sortFunction</td><td>no</td><td>true</td><td><code>java.util.Comparator</code></td><td>Defines an alternate method of sorting. Sort this column using a Comparator<Object> object that takes the sortBy values of this column as input.</td>
+</tr>
+<tr valign="top">
+<td>sortPriority</td><td>no</td><td>true</td><td><code>java.lang.Integer</code></td><td>Defines the priority of a column during sorting. The column priorities incoming from the client during a sort request overwrite any set by the application. Processing the sorted columns is done by the component whenever a client edits a sort control or the application calls table.applySorting().</td>
+</tr>
+<tr valign="top">
+<td>stacked</td><td>no</td><td>true</td><td><code>boolean</code></td><td>When enabled, this column is rendered underneath the previous column.</td>
+</tr>
+<tr valign="top">
+<td>style</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Custom inline CSS styles to use for this component. These styles are generally applied to the root DOM element of the component. This is intended for per-component basic style customizations. Note that due to browser CSS precedence rules, CSS rendered on a DOM element will take precedence over the external stylesheets used to provide the ThemeRoller theme on this component. If the CSS properties applied with this attribute do not affect the DOM element you want to style, you may need to create a custom theme styleClass for the theme CSS class that targets the particular DOM elements you wish to customize.</td>
+</tr>
+<tr valign="top">
+<td>styleClass</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Custom CSS style class(es) to use for this component. These style classes can be defined in your page or in a theme CSS file.</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="column.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

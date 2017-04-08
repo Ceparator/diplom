@@ -1,0 +1,199 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>tooltip
+          (ICEfaces ACE Components 4.0.0 Tag Library Reference)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="tooltip (ICEfaces ACE Components 4.0.0 Tag Library Reference)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="tooltip.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">ICEfaces ACE Components</font>
+<br>
+            Tag tooltip</h2>
+<hr>The Tooltip is a component that displays a tooltip with various events, effects and customization options.<p>For more information, see the <a href="http://wiki.icefaces.org/display/ICE/Tooltip">Tooltip Wiki Documentation</a>.<hr><table border='1' cellpadding='3' cellspacing='0' width='100%'><tr bgcolor='#CCCCFF' class='TableHeadingColor'><td colspan='4'><font size='+2'><b>Client Events</b></font></td></tr><tr><td><b>Name</b></td><td><b>Description</b></td><td><b>Supported Classes for Argument</b></td><td><b>Default Event Scopes</b></td><tr><tr><td>display</td><td>Fired before the tooltip is shown (default event).</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr></table><i>Client events can be used with Client Behaviors and the ace:ajax tag.</i><br><br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>org.icefaces.ace.component.tooltip.TooltipTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>binding</td><td>no</td><td>true</td><td><code>javax.el.ValueExpression</code></td><td>Using an EL expression, bind the component reference to a bean property, so that the component may be accessed in the bean.</td>
+</tr>
+<tr valign="top">
+<td>converter</td><td>no</td><td>true</td><td><code>javax.faces.convert.Converter</code></td><td>Converter is an interface describing a Java class that can perform Object-to-String and String-to-Object conversions between model data objects and a String representation of those objects that is suitable for rendering.</td>
+</tr>
+<tr valign="top">
+<td>displayListener</td><td>no</td><td>true</td><td><code>javax.el.MethodExpression</code></td><td>A server side listener to be invoked when the tooltip is about to be shown in the client.</td>
+</tr>
+<tr valign="top">
+<td>fetch</td><td>no</td><td>true</td><td><code>javax.el.ValueExpression</code></td><td>When using "forDelegate", an EL expression can be specified as the value of this attribute. Such expression will be evaluated at the same point (e.g. row) where the component that triggered the tooltip is located, allowing to retrieve row data in a table or iterative container. The result is saved in the bean property specified by the "store" attribute.</td>
+</tr>
+<tr valign="top">
+<td>for</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Specifies the id of the component that will display the tooltip. Ignored if "global" is true.</td>
+</tr>
+<tr valign="top">
+<td>forContainer</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Specifies the id of the component that contains the component referenced by the "for" attribute. This is to be used in cases where the target component is inside an iterative container such as a data table and the tooltip component itself is outside. A more robust solution is to use "forDelegate" instead of this attribute.</td>
+</tr>
+<tr valign="top">
+<td>forDelegate</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Specifies the id of the <ace:delegate> component that will receive the tooltip listeners on behalf of the component specified in the "for" attribute. This is useful when the tooltip component is outside a data table or iterative container and references a component inside such container. This improves performance by avoiding the creation of tooltip objects in each each row. It also guards against dynamic updates that could replace the component and make it lose its tooltip listeners. Additionally, this method allows retrieving row data by using the "fetch" and "store" attributes. This is a better alternative to "forContainer".</td>
+</tr>
+<tr valign="top">
+<td>forElement</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Specifies the id of the HTML element that will display the tooltip. Applicable only if "for" component is not specified. Ignored if "global" is true.</td>
+</tr>
+<tr valign="top">
+<td>global</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Boolean value specifying whether to create tooltips for all elements with a title attribute using the title attribute value. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>hideDelay</td><td>no</td><td>true</td><td><code>int</code></td><td>Time in milliseconds by which to delay the hiding of the tooltip. Default = '0'.</td>
+</tr>
+<tr valign="top">
+<td>hideEffect</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Effect to use upon hiding the tooltip e.g. fade, slide or grow. Default = 'fade'.</td>
+</tr>
+<tr valign="top">
+<td>hideEffectLength</td><td>no</td><td>true</td><td><code>int</code></td><td>Length of time in milliseconds the hide effect will last for. Default = '500'.</td>
+</tr>
+<tr valign="top">
+<td>hideEvent</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Event which will trigger the hiding of the tooltip. Possible values are DOM events, such as "mouseout", documented under <a href="http://docs.jquery.com/Events/bind#typedatafn">jQuery's Event: bind()</a>. Default = 'mouseout'.</td>
+</tr>
+<tr valign="top">
+<td>id</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The component identifier for this component. This value must be unique within the closest parent component that is a naming container.</td>
+</tr>
+<tr valign="top">
+<td>position</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The corner of the tooltip to position in relation to the target's corner. E.g. topLeft, bottomRight. See <a href="http://craigsworks.com/projects/qtip/docs/tutorials/#position">positioning</a> for all possible values. Default = 'topLeft'.</td>
+</tr>
+<tr valign="top">
+<td>rendered</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Return true if this component (and its children) should be rendered during the Render Response phase of the request processing lifecycle. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>showDelay</td><td>no</td><td>true</td><td><code>int</code></td><td>Time in milliseconds by which to delay the showing of the tooltip. Default = '140'.</td>
+</tr>
+<tr valign="top">
+<td>showEffect</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Effect to use upon showing the tooltip e.g. fade, slide or grow. Default = 'fade'.</td>
+</tr>
+<tr valign="top">
+<td>showEffectLength</td><td>no</td><td>true</td><td><code>int</code></td><td>Length of time in milliseconds the show effect will last for. Default = '500'.</td>
+</tr>
+<tr valign="top">
+<td>showEvent</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Event which will trigger the showing of the tooltip. Possible values are DOM events, such as "mouseover", documented under <a href="http://docs.jquery.com/Events/bind#typedatafn">jQuery's Event: bind()</a>. Default = 'mouseover'.</td>
+</tr>
+<tr valign="top">
+<td>speechBubble</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Specifies whether the tooltip should be stylized as a speech bubble (i.e. with a speech bubble arrow tip pointing to the triggerer element). Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>store</td><td>no</td><td>true</td><td><code>java.lang.Object</code></td><td>The result of evaluating the expression specified in "fetch" is stored in the bean property specified in this attribute.</td>
+</tr>
+<tr valign="top">
+<td>style</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The inline style of the component, rendered on the root div of the component.</td>
+</tr>
+<tr valign="top">
+<td>styleClass</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The CSS style class of the component, rendered on the root div of the component.</td>
+</tr>
+<tr valign="top">
+<td>targetPosition</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The corner of the target element by which to position the tooltip by. E.g. topLeft, bottomRight. See <a href="http://craigsworks.com/projects/qtip/docs/tutorials/#position">positioning</a> for all possible values. Default = 'bottomRight'.</td>
+</tr>
+<tr valign="top">
+<td>value</td><td>no</td><td>true</td><td><code>java.lang.Object</code></td><td>The current value of the simple component. The value to be rendered.</td>
+</tr>
+<tr valign="top">
+<td>widgetVar</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Name of the widget to access client side api</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="tooltip.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

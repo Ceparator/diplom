@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components">
+    <h:head>
+        <title>Repairs</title>
+    </h:head>
+    <h:body>
+        <f:view> 
+            <h:form>
+                <c:if test="#{request.isUserInRole('driver') or request.isUserInRole('mechanic')}">
+                    <h3>
+                        <h:outputLabel value="My repairs"/>
+                    </h3>
+                    <br/>
+                    <ace:dataTable var="rp" value="#{repairBean.getMyRepairs()}">
+                        <ace:column headerText="Id" rendered="false">
+                            <h:outputText value="#{rp.idRepair}" />
+                        </ace:column>
+                        <ace:column headerText="Transport">
+                            <h:outputText value="#{rp.idTransport.serialNumber}" />
+                        </ace:column>
+                        <ace:column headerText="Driver">
+                            <h:outputText value="#{rp.driver}" />
+                        </ace:column>
+                        <ace:column headerText="Price">
+                            <h:outputText value="#{rp.price}" />
+                        </ace:column>
+                        <ace:column headerText="Expected fix date">
+                            <h:outputText value="#{rp.expectedFixDate}">
+                                <f:convertDateTime pattern="dd-MM-yyyy" />
+                            </h:outputText>
+                        </ace:column>
+                        <ace:column headerText="Fix date">
+                            <h:outputText value="#{rp.actualFixDate}">
+                                <f:convertDateTime pattern="dd-MM-yyyy" />
+                            </h:outputText>
+                        </ace:column>
+                        <ace:column headerText=""> 
+                            <h:commandLink rendered="#{request.isUserInRole('mechanic') and  (empty rp.actualFixDate)}" action="#{repairBean.ToEditRepair(rp)}" value="Finish repair"/>
+                        </ace:column>
+                    </ace:dataTable>
+                    <br/><br/>
+                    <h:commandButton value="Home page" action="/index.xhtml"/>
+                    <br/>
+                    <h3>
+                        <h:outputLabel value="Pending repairs"/>
+                    </h3>
+                    <br/>
+                    <ace:dataTable var="rp" value="#{repairBean.getPendingRepairs()}">
+                        <ace:column headerText="Id" rendered="false">
+                            <h:outputText value="#{rp.idRepair}" />
+                        </ace:column>
+                        <ace:column headerText="Transport">
+                            <h:outputText value="#{rp.idTransport.serialNumber}" />
+                        </ace:column>
+                        <ace:column headerText="Driver">
+                            <h:outputText value="#{rp.driver}" />
+                        </ace:column>
+                        <ace:column headerText=""> 
+                            <h:commandLink action="#{repairBean.assignRepair(rp)}" value="Assing to me"/>
+                        </ace:column>
+                    </ace:dataTable>
+                </c:if>
+
+
+
+
+
+                <c:if test="#{request.isUserInRole('admin') or request.isUserInRole('dispatcher')}">
+                    <h3>
+                        <h:outputLabel value="All repairs"/>
+                    </h3>
+                    <br/>
+                    <ace:dataTable var="rp" value="#{repairBean.getAllRepairs()}">
+                        <ace:column headerText="Id" rendered="false">
+                            <h:outputText value="#{rp.idRepair}" />
+                        </ace:column>
+                        <ace:column headerText="Transport">
+                            <h:outputText value="#{rp.idTransport.serialNumber}" />
+                        </ace:column>
+                        <ace:column headerText="Driver">
+                            <h:outputText value="#{rp.driver}" />
+                        </ace:column>
+                        <ace:column headerText="Price">
+                            <h:outputText value="#{rp.price}" />
+                        </ace:column>
+                        <ace:column headerText="Expected fix date">
+                            <h:outputText value="#{rp.expectedFixDate}" />
+                        </ace:column>
+                        <ace:column headerText="Fix date">
+                            <h:outputText value="#{rp.actualFixDate}" />
+                        </ace:column>
+                        <ace:column headerText=""> 
+                            <h:commandLink rendered="#{request.isUserInRole('admin')}" action="#{repairBean.deleteRepair(rp)}" value="Delete repair"/>
+                        </ace:column>
+                    </ace:dataTable>
+                    <br/><br/>
+                    <h:commandButton value="Home page" action="/index.xhtml"/>
+                </c:if>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

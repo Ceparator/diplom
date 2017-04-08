@@ -1,0 +1,178 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>tree
+          (ICEfaces ACE Components 4.0.0 Tag Library Reference)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="tree (ICEfaces ACE Components 4.0.0 Tag Library Reference)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="tree.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">ICEfaces ACE Components</font>
+<br>
+            Tag tree</h2>
+<hr>Renders a hierarchical structure of ace:node contents. Supports client-side and server-side node selection and expansion. Other features available include: user reordering of nodes, multiple selection and lazy node state initialization.<p>For more information, see the <a href="http://wiki.icefaces.org/display/ICE/Tree">Tree Wiki Documentation</a>.</p><hr><table border='1' cellpadding='3' cellspacing='0' width='100%'><tr bgcolor='#CCCCFF' class='TableHeadingColor'><td colspan='4'><font size='+2'><b>Client Events</b></font></td></tr><tr><td><b>Name</b></td><td><b>Description</b></td><td><b>Supported Classes for Argument</b></td><td><b>Default Event Scopes</b></td><tr><tr><td>expand</td><td>Fired when a node switch is clicked to show children a node.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>contract</td><td>Fired when a node switch is clicked to hide children a node.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>select</td><td>Fired when a node is clicked to select it.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>deselect</td><td>Fired when a selected node is clicked to deselect it.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr><tr><td>reorder</td><td>Fired when a node is dragged into a new position.</td><td>javax.faces.event.AjaxBehaviorEvent</td><td>execute=@this render=@all</td></tr></table><i>Client events can be used with Client Behaviors and the ace:ajax tag.</i><br><br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>org.icefaces.ace.component.tree.TreeTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>binding</td><td>no</td><td>true</td><td><code>javax.el.ValueExpression</code></td><td>Using an EL expression, bind the component reference to a bean property, so that the component may be accessed in the bean.</td>
+</tr>
+<tr valign="top">
+<td>dragHandle</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Specifies the jQuery selector(s) of the elements inside the node container that will be used as the drag handle(s). If this attribute isn't specified, any point of the node container can initiate the dragging action. The selectors are relative to the node's root element. When using multiple selectors, separate them by commas. The handles apply to all nodes defined in the tree.</td>
+</tr>
+<tr valign="top">
+<td>expansion</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enable expansion feature of this tree component. This toggles this feature for the entire tree, per-node configuration of this feature available via the NodeState. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>expansionMode</td><td>no</td><td>true</td><td><code>org.icefaces.ace.component.tree.TreeExpansionMode</code></td><td>Select the request behaviour of the expansion feature. When 'client', the children of every node are pre-rendered in the DOM and exposed by JavaScript when nodes are expanded. In the default 'server' mode, only visible nodes are inthe DOM and expansion and contraction are caused by ajax page updates. Default = 'org.icefaces.ace.component.tree.TreeExpansionMode.server'.</td>
+</tr>
+<tr valign="top">
+<td>first</td><td>no</td><td>true</td><td><code>int</code></td><td>Zero-relative row number of the first row in the underlying data model to be displayed, or zero to start at the beginning of the data model. Default = '0'.</td>
+</tr>
+<tr valign="top">
+<td>id</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The component identifier for this component. This value must be unique within the closest parent component that is a naming container.</td>
+</tr>
+<tr valign="top">
+<td>keyConverter</td><td>no</td><td>true</td><td><code>org.icefaces.ace.model.tree.KeySegmentConverter</code></td><td>Optionally define a custom KeySegmentConverter object to produce segmented identifier keys for nodes based on something other than indexes.</td>
+</tr>
+<tr valign="top">
+<td>rendered</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Return true if this component (and its children) should be rendered during the Render Response phase of the request processing lifecycle. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>reordering</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enable reordering of the nodes of this tree. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>rowIndex</td><td>no</td><td>true</td><td><code>int</code></td><td>Zero-relative index of the row currently being accessed in the underlying DataModel, or -1 for no current row. Default = '0'.</td>
+</tr>
+<tr valign="top">
+<td>rows</td><td>no</td><td>true</td><td><code>int</code></td><td>The number of rows (starting with the one identified by the first property) to be displayed, or zero to display the entire set of available rows. Default = '0'.</td>
+</tr>
+<tr valign="top">
+<td>selectMultiple</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Disable the selection of multiple nodes simultaneously. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>selection</td><td>no</td><td>true</td><td><code>java.lang.Boolean</code></td><td>Enable selection feature of this tree component. This toggles this feature for the entire tree, per-node configuration of this feature available via the NodeState. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>selectionMode</td><td>no</td><td>true</td><td><code>org.icefaces.ace.component.tree.TreeSelectionMode</code></td><td>Select the request behaviour of the selection feature. When 'client', the (de)selection of a node is recorded on the client, and communicated to the server on the next request executing this component. In the default 'server' mode, when a node is (de)selected, the component communicates the change the server immediately with an ajax update. Default = 'org.icefaces.ace.component.tree.TreeSelectionMode.server'.</td>
+</tr>
+<tr valign="top">
+<td>stateCreationCallback</td><td>no</td><td>true</td><td><code>org.icefaces.ace.model.tree.NodeStateCreationCallback</code></td><td>Bind an implementer of the NodeStateCreationCallback interface to take as input, a node object and a default NodeState and return a NodeState configured with the state appropriatefor the given node object.</td>
+</tr>
+<tr valign="top">
+<td>stateMap</td><td>no</td><td>true</td><td><code>org.icefaces.ace.model.tree.NodeStateMap</code></td><td>Define a NodeStateMap ValueExpression to access the store of Tree node object state information. The state map provides an API for looking up the state of a particular node object, as well as reverse look-ups to get node objects with a particular state.</td>
+</tr>
+<tr valign="top">
+<td>stateVar</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The request-scope attribute exposing the state object for the currentnode when iterating. Default = 'nodeState'.</td>
+</tr>
+<tr valign="top">
+<td>type</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Define a ValueExpression that returns a String representation of the 'rendering type' of this node. The rendering type is matched against the String 'type' attribute of ace:node tag instances to determine which node template should be used to render a given node object.</td>
+</tr>
+<tr valign="top">
+<td>value</td><td>no</td><td>true</td><td><code>java.lang.Object</code></td><td>The Java objects representing the nodes of the tree. Supports either a List of javax.swing.tree.TreeNode implementations, MutableTreeNode implementations or an implementation of NodeDataModel.</td>
+</tr>
+<tr valign="top">
+<td>var</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The request-scope attribute (if any) under which the data object for the current row will be exposed when iterating.</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="tree.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

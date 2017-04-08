@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Route schedule</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form  id="form"> 
+                <h2> 
+                    <h:outputLabel value="Route schedule of route #{routeBean.route.number}"/> 
+                </h2>
+
+                <c:choose>
+                    <c:when test="#{request.isUserInRole('admin') or request.isUserInRole('dispatcher')}">
+                        <table>
+                            <tr> 
+                                <th align="left"> 
+                                    <h:outputLabel value="Relax" for="rx"/> 
+                                </th> 
+                                <th> 
+                                    <h:inputText id="relax" value="#{scheduleBean.relax}"> 
+                                        <f:validateDoubleRange maximum="100" minimum="1"/>
+                                    </h:inputText>
+                                </th> 
+                            </tr> 
+                            <tr> 
+                                <th align="left"> 
+                                    <h:outputLabel value="Food break" for="fb"/> 
+                                </th> 
+                                <th> 
+                                    <h:inputText id="foodBreak" value="#{scheduleBean.foodBreak}"  > 
+                                        <f:validateDoubleRange maximum="100" minimum="1"/>
+                                    </h:inputText>
+                                </th> 
+                            </tr>
+                        </table>
+                    </c:when>
+                </c:choose>
+
+
+                <h3> 
+                    <h:outputLabel value="Route schedule from first stop"/> 
+                </h3>
+
+                <ace:dataTable id="scheduleTable"
+                               value="#{scheduleBean.firstSchedules}"
+                               var="sched">
+                    <ace:ajax event="editSubmit" render="facesMsgs"/>
+                    <ace:column id="driv" headerText="Driver">
+                        <h:outputText  value="#{sched.idRouteList.driver}"/>
+                    </ace:column>
+                    <ace:column id="cond" headerText="Conductor">
+                        <h:outputText value="#{sched.idRouteList.conductor}"/>
+                    </ace:column>
+                    <ace:column id="firstTime" headerText="#{routeBean.route.firstStop.name}">
+                        <ace:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText id="firstTimeCell" value="#{sched.firstTime}">
+                                    <f:convertDateTime pattern="HH-mm" />
+                                </h:outputText>
+                            </f:facet>
+                            <f:facet name="input">
+                                <h:inputText id="firstTimeInput" value="#{sched.firstTime}">
+                                    <f:convertDateTime pattern="HH-mm"/> 
+                                </h:inputText>
+                            </f:facet>
+                        </ace:cellEditor>
+                    </ace:column>
+                    <ace:column id="lastTime" headerText="#{routeBean.route.lastStop.name}">
+                        <ace:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText id="lastTimeCell" value="#{sched.lastTime}">
+                                    <f:convertDateTime pattern="HH-mm" />
+                                </h:outputText>
+                            </f:facet>
+                            <f:facet name="input">
+                                <h:inputText id="lastTimeInput" value="#{sched.lastTime}">
+                                    <f:convertDateTime pattern="HH-mm"/> 
+                                </h:inputText>
+                            </f:facet>
+                        </ace:cellEditor>
+                    </ace:column>
+                    <ace:column id="options" headerText="Edit time" rendered="#{request.isUserInRole('admin') or request.isUserInRole('dispatcher')}">
+                        <ace:rowEditor id="editor"/>
+                    </ace:column>
+                    <ace:column headerText="" rendered="#{request.isUserInRole('admin') or request.isUserInRole('dispatcher')}"> 
+                        <h:commandLink action="#{scheduleBean.deleteSchedule(sched)}" value="Delete"/>
+                    </ace:column>
+                </ace:dataTable>
+
+                <c:choose>
+                    <c:when test="#{request.isUserInRole('admin') or request.isUserInRole('dispatcher')}">
+                        <br/><br/>
+                        <h:commandButton value="Accept schedule" immediate="true" action="#{scheduleBean.acceptSchedules(true)}"/>
+                        <br/><br/>
+                        <h:commandButton value="Regenerate schedule" action="#{scheduleBean.regenerateSchedules(routeBean.route, true)}"/>
+                    </c:when>
+                </c:choose>
+
+                <h3> 
+                    <h:outputLabel value="Route schedule from last stop"/> 
+                </h3>
+                <ace:dataTable id="scheduleTable2"
+                               value="#{scheduleBean.secondSchedules}"
+                               var="sched2">
+                    <ace:ajax event="editSubmit" render="facesMsgs"/>
+                    <ace:column id="driv2" headerText="Driver">
+                        <h:outputText  value="#{sched2.idRouteList.driver}"/>
+                    </ace:column>
+                    <ace:column id="cond2" headerText="Conductor">
+                        <h:outputText value="#{sched2.idRouteList.conductor}"/>
+                    </ace:column>
+                    <ace:column id="firstTime2" headerText="#{routeBean.route.lastStop.name}">
+                        <ace:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText id="firstTimeCell2" value="#{sched2.firstTime}">
+                                    <f:convertDateTime pattern="HH-mm" />
+                                </h:outputText>
+                            </f:facet>
+                            <f:facet name="input">
+                                <h:inputText id="firstTimeInput2" value="#{sched2.firstTime}">
+                                    <f:convertDateTime pattern="HH-mm"/> 
+                                </h:inputText>
+                            </f:facet>
+                        </ace:cellEditor>
+                    </ace:column>
+                    <ace:column id="lastTime2" headerText="#{routeBean.route.firstStop.name}">
+                        <ace:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText id="lastTimeCell2" value="#{sched2.lastTime}">
+                                    <f:convertDateTime pattern="HH-mm" />
+                                </h:outputText>
+                            </f:facet>
+                            <f:facet name="input">
+                                <h:inputText id="lastTimeInput2" value="#{sched2.lastTime}">
+                                    <f:convertDateTime pattern="HH-mm"/> 
+                                </h:inputText>
+                            </f:facet>
+                        </ace:cellEditor>
+                    </ace:column>
+                    <ace:column id="options2" headerText="Edit time" rendered="#{request.isUserInRole('admin') or request.isUserInRole('dispatcher')}">
+                        <ace:rowEditor id="editor2"/>
+                    </ace:column>
+                    <ace:column headerText="" rendered="#{request.isUserInRole('admin') or request.isUserInRole('dispatcher')}"> 
+                        <h:commandLink action="#{scheduleBean.deleteSchedule(sched2)}" value="Delete"/>
+                    </ace:column>
+                </ace:dataTable>
+
+                <c:choose>
+                    <c:when test="#{request.isUserInRole('admin') or request.isUserInRole('dispatcher')}">
+                        <br/><br/>
+                        <h:commandButton value="Accept schedule" immediate="true" action="#{scheduleBean.acceptSchedules(false)}"/>
+                        <br/><br/>
+                        <h:commandButton value="Regenerate schedule" action="#{scheduleBean.regenerateSchedules(routeBean.route, false)}"/>
+                        <br/><br/>
+                    </c:when>
+                </c:choose>
+                <h:commandButton value="Main page" immediate="true" action="/index.xhtml"/>
+            </h:form>
+            <ace:messages id="facesMsgs2"/>
+        </f:view>
+    </h:body>
+</html>

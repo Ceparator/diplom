@@ -1,0 +1,175 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>growlMessages
+          (ICEfaces ACE Components 4.0.0 Tag Library Reference)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="growlMessages (ICEfaces ACE Components 4.0.0 Tag Library Reference)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="growlMessages.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">ICEfaces ACE Components</font>
+<br>
+            Tag growlMessages</h2>
+<hr>Display Faces messages in a Growl container positioned on one of the four corners of the browser window.<br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>org.icefaces.ace.component.growlmessages.GrowlMessagesTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>autoHide</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Types of messages to auto hide after display: "true" (auto hide all messages), "false" (don't auto hide any message), "info", "warn", "error", or "fatal" (auto hide messages at or below specified severity.) Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>binding</td><td>no</td><td>true</td><td><code>javax.el.ValueExpression</code></td><td>Using an EL expression, bind the component reference to a bean property, so that the component may be accessed in the bean.</td>
+</tr>
+<tr valign="top">
+<td>closeAll</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Whether or not the close-all button should be used when more than one notification appears on the screen. (Close visible messages only, not hidden messages.) Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>displayDuration</td><td>no</td><td>true</td><td><code>int</code></td><td>The lifespan (milliseconds) of an auto-hide message on the screen. Default = '3000'.</td>
+</tr>
+<tr valign="top">
+<td>escape</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Flag indicating that characters that are sensitive in HTML and XML markup must be escaped. Note: setting this to false may open up security issues. See <a href="https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet">XSS (Cross Site Scripting) Prevention Cheat Sheet.</a> Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>for</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Identifier of the component for which to render error messages. If this component is within the same NamingContainer as the target component, this must be the component identifier. Otherwise, it must be an absolute component identifier (starting with ":"). Leave out or use "@all" to output global messages.</td>
+</tr>
+<tr valign="top">
+<td>globalOnly</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Flag indicating whether only global messages (that is, messages with no associated client identifier) should be rendered. Mutually exclusive with the 'for' property which takes precedence. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>header</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Header to prefix a message. Default = ''.</td>
+</tr>
+<tr valign="top">
+<td>hideEffectDuration</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Duration (also called "speed" in jQuery) of hide effect. Values and default same as for showEffectDuration. Default = '_default'.</td>
+</tr>
+<tr valign="top">
+<td>id</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The component identifier for this component. This value must be unique within the closest parent component that is a naming container.</td>
+</tr>
+<tr valign="top">
+<td>maxVisibleMessages</td><td>no</td><td>true</td><td><code>int</code></td><td>Limit the number of messages appearing at a given time to this number. Default is 0, no limit. Default = '0'.</td>
+</tr>
+<tr valign="top">
+<td>messageOrder</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Designates whether a notification should be appended to the container after all notifications, or whether it should be prepended to the container before all notifications. Options are "after" or "before". Default = 'after'.</td>
+</tr>
+<tr valign="top">
+<td>messageStyleClass</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>A CSS class to be applied to each notification when they are created. Default = ''.</td>
+</tr>
+<tr valign="top">
+<td>position</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Designates a class which is applied to the growl container and controls its position on the screen. Options: top-left, top-right, bottom-left, bottom-right. Default = 'top-right'.</td>
+</tr>
+<tr valign="top">
+<td>redisplay</td><td>no</td><td>true</td><td><code>boolean</code></td><td>A flag indicating this UIMessages instance should redisplay FacesMessages that have already been handled. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>rendered</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Return true if this component (and its children) should be rendered during the Render Response phase of the request processing lifecycle. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>showDetail</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Flag indicating whether the "detail" property of messages for the specified component should be rendered. Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>showEffectDuration</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Duration (also called "speed" in jQuery) of show effect. One of "slow", "_default", "fast", or an integer of milliseconds. ("slow", "_default", "fast" currently equated to 600, 400 and 200 respectively in jQuery.) Default = '_default'.</td>
+</tr>
+<tr valign="top">
+<td>showSummary</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Flag indicating whether the "summary" property of messages for the specified component should be rendered. Default = 'true'.</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="growlMessages.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

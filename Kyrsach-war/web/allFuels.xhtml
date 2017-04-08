@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components">
+    <h:head>
+        <title>All fuels</title>
+    </h:head>
+    <h:body>
+        <f:view> 
+            <h:form> 
+                <h2> 
+                    <h:outputLabel value="Fuels"/> 
+                </h2>
+                <ace:dataTable var="fl" value="#{fuelBean.getAllFuels()}">
+                    <ace:column headerText="Id" rendered="false">
+                        <h:outputText value="#{fl.idFuel}" />
+                    </ace:column>
+                    <ace:column headerText="Fuel type">
+                        <h:outputText value="#{fl.fuelNumber}" />
+                    </ace:column>
+                    <ace:column headerText="Fuel price">
+                        <h:outputText value="#{fl.fuelPrice}" />
+                    </ace:column>
+                    <ace:column headerText="" rendered="#{request.isUserInRole('admin') or request.isUserInRole('mechanic')}"> 
+                        <h:commandLink action="#{fuelBean.ToEditFuel(fl)}" value="Edit fuel"/>
+                    </ace:column>
+                    <ace:column headerText="" rendered="#{request.isUserInRole('admin') or request.isUserInRole('mechanic')}"> 
+                        <h:commandLink action="#{fuelBean.deleteFuel(fl)}" value="Delete fuel"/>
+                    </ace:column>
+                </ace:dataTable>
+                <br/><br/>
+                <h:commandButton value="Add new fuel" rendered="#{request.isUserInRole('admin') or request.isUserInRole('mechanic')}" action="/addFuel.xhtml"/>
+                <br/><br/>
+                <h:commandButton value="Home page" action="/index.xhtml"/>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

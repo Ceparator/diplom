@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components">
+    <h:head>
+        <title>All transports</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form> 
+                <h2> 
+                    <h:outputLabel value="Transports"/> 
+                </h2>
+                <ace:dataTable var="transp" value="#{transportBean.getAllTransports()}" rows="20"
+                               paginator="true"
+                               paginatorPosition="bottom"
+                               rowStyleClass="#{transp.transportValid == false ? 'old' : null}">
+                    <ace:column headerText="Id" rendered="false">
+                        <h:outputText value="#{transp.idTransport}" />
+                    </ace:column>
+                    <ace:column headerText="Serial number" sortBy="#{transp.serialNumber}" filterMatchMode="contains">
+                        <h:outputText value="#{transp.serialNumber}" />
+                    </ace:column>
+
+                    <ace:column headerText="Fuel type" sortBy="#{transp.idFuel.fuelNumber}" filterMatchMode="contains">
+                        <h:outputText value="#{transp.idFuel.fuelNumber}" />
+                    </ace:column>
+                    <ace:column headerText="Max fuel capacity" sortBy="#{transp.fuelCapacity}" filterMatchMode="contains">
+                        <h:outputText value="#{transp.fuelCapacity}" />
+                    </ace:column>
+                    <ace:column headerText="" rendered="#{request.isUserInRole('mechanic')}"> 
+                        <h:commandLink action="#{refillBean.ToRefillTransport(transp)}" value="Refill transport"/>
+                    </ace:column>
+                    <ace:column headerText="" rendered="#{request.isUserInRole('admin') or request.isUserInRole('dispatcher')}"> 
+                        <h:commandLink action="#{transportBean.ToEditTransport(transp)}" value="Edit transport"/>
+                    </ace:column>
+                    <ace:column headerText="" rendered="#{request.isUserInRole('admin')}"> 
+                        <h:commandLink action="#{transportBean.deleteTransport(transp)}" value="Delete transport"/>
+                    </ace:column>
+                </ace:dataTable>
+                <br/><br/>
+                <h:commandButton value="Add new transport" rendered="#{request.isUserInRole('admin')}" action="/addTransport.xhtml"/>
+                <br/><br/>
+                <h:commandButton value="Home page" action="/index.xhtml"/>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components">
+    <h:head>
+        <title>All refills</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form> 
+                <h2> 
+                    <h:outputLabel value="Refills"/> 
+                </h2>
+                <ace:dataTable var="ref" value="#{refillBean.getAllRefills()}" rows="20"
+                               paginator="true"
+                               paginatorPosition="bottom">
+                    <ace:column headerText="Id" rendered="false">
+                        <h:outputText value="#{ref.idTransport}" />
+                    </ace:column>
+                    <ace:column headerText="Transport" sortBy="#{ref.idTransport.serialNumber}" filterMatchMode="contains">
+                        <h:outputText value="#{ref.idTransport.serialNumber}" />
+                    </ace:column>
+                    <ace:column headerText="Fuel type" sortBy="#{ref.idFuel.fuelNumber}" filterMatchMode="contains">
+                        <h:outputText value="#{ref.idFuel.fuelNumber}" />
+                    </ace:column>
+                    <ace:column headerText="Volume" sortBy="#{ref.volume}" filterMatchMode="contains">
+                        <h:outputText value="#{ref.volume}" />
+                    </ace:column>
+                    <ace:column headerText="Cost" sortBy="#{ref.cost}" filterMatchMode="contains">
+                        <h:outputText value="#{ref.cost}" />
+                    </ace:column>
+                    <ace:column headerText="Mechanic" sortBy="#{ref.mechanic}" filterMatchMode="contains">
+                        <h:outputText value="#{ref.mechanic}" />
+                    </ace:column>
+                    <ace:column headerText="Date" sortBy="#{ref.refillDate}" filterMatchMode="contains">
+                        <h:outputText value="#{ref.refillDate}">
+                            <f:convertDateTime pattern="dd-MM-yyyy" />
+                        </h:outputText>
+                    </ace:column>
+                    <ace:column headerText="" rendered="#{request.isUserInRole('admin')}"> 
+                        <h:commandLink action="#{refillBean.deleteRefill(ref)}" value="Delete refill"/>
+                    </ace:column>
+                </ace:dataTable>
+                <br/><br/>
+                <h:commandButton value="Add refill" action="/addRefill.xhtml"/>
+                <br/><br/>
+                <h:commandButton value="Main page" action="/index.xhtml"/>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>

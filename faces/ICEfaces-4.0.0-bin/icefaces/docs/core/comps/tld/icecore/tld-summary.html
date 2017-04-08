@@ -1,0 +1,166 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>icecore
+          (ICEfaces Core 4.0.0 Tag Library Reference)
+        </title>
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="styie">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="icecore (ICEfaces Core 4.0.0 Tag Library Reference)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev">    &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Library&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><font CLASS="NavBarFont1">&nbsp;Tag&nbsp;</font></td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a HREF="tld-summary.html" TARGET="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>icecore</h2>
+<hr>
+<b>Standard Syntax:</b>
+<br>
+<code>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                
+                    &lt;%@ taglib prefix="icecore" uri="http://icefaces.org/tld/core" %&gt;<br>
+</code>
+<br>
+<b>XML Syntax:</b>
+<br>
+<code>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                
+                    &lt;anyxmlelement xmlns:icecore="http://icefaces.org/tld/core" /&gt;<br>
+</code>
+<hr>
+                No Description
+              <p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Library Information</b></font></td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Version</td><td>4.0.0</td>
+</tr>
+<tr>
+<td>Short Name</td><td>icecore</td>
+</tr>
+<tr>
+<td>URI</td><td>http://icefaces.org/tld/core</td>
+</tr>
+</table>
+            &nbsp;
+            <p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Summary</b></font></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td width="15%"><b><a href="config.html">config</a></b></td><td>This tag can be used to adjust behaviour on a per-page basis. These settings take precedence over corresponding application global settings specified via context-param entries in the web.xml file.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td width="15%"><b><a href="refresh.html">refresh</a></b></td><td>This tag can be used to configure push behavior on a per-view basis.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td width="15%"><b><a href="push.html">push</a></b></td><td>This tag can be used to configure push behavior on a per-view basis.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td width="15%"><b><a href="setEventPhase.html">setEventPhase</a></b></td><td>The Set Event Phase component allows one to specify the phase that certain events will be broadcast in, for events originating from components in its child hierarchy. Note that some iterative containers, such as UIRepeat, UIData and its sub-classes, will wrap events inside another event type that records source row information, so if the iterative container is in-between setEventPhase and the intended source component, in the child/parent component hierarchy, that will interfere with setEventPhase's ability to alter events by their class name. Only selecting all events by specifying an events value of "FacesEvent" would work.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td width="15%"><b><a href="navigationNotifier.html">navigationNotifier</a></b></td><td>This tag can be used to configure the page to be notified when the browser back button is pressed.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td width="15%"><b><a href="defaultAction.html">defaultAction</a></b></td><td>The defaultAction tag can be used to initiate a form submit when a certain key is pressed. An action or an action listener can be defined to control which method to be invoked on the server side.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td width="15%"><b><a href="jsEventListener.html">jsEventListener</a></b></td><td>The jsEventListener component allows you to listen for client-side JavaScript events and optionally trigger JavaScript handlers or server-side action listeners in response.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td width="15%"><b><a href="idleMonitor.html">idleMonitor</a></b></td><td>This component provides a markup-based method of configuring the ICEfaces bridge "ice.onUserInactivity(interval, idleCallback, activeCallback)" function. This container provides the attributes to configure the userInactivity callback while also acting as an invisible container to other JSF components contained within it. Upon firing of the user inactivity callback, the component makes all of its child components visible on the page.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td width="15%"><b><a href="focusManager.html">focusManager</a></b></td><td>The focusManager component provides the following automatic focus setting behaviors when it is included inside a form component: - The first visible (enabled) input element in the form has focus set on it initially. - Alternatively, if there is an invalid component in the form (failed validation), the first visible (enabled) invalid component will receive focus instead. - The application may also specify a component to have focus set on it via the "for" attribute.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td width="15%"><b><a href="redirect.html">redirect</a></b></td><td>The redirect tag can be used to trigger a redirect immediately on page load, upon any user interaction causing a render of the tag, or at the server's discretion using push.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td width="15%"><b><a href="loadBundle.html">loadBundle</a></b></td><td>This tag loads a resource bundle and saves it as a variable in the request scope.</td>
+</tr>
+</table>
+              &nbsp;
+              <p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td><font size="+2"><b>Listeners</b></font></td>
+</tr>
+<tr valign="top" bgcolor="white" class="TableRowColor">
+<td><b>org.icefaces.impl.push.servlet.ICEpushResourceHandlerLifecycle</b></td>
+</tr>
+<tr valign="top" bgcolor="white" class="TableRowColor">
+<td><b>org.icefaces.impl.application.SessionExpiredListener</b></td>
+</tr>
+<tr valign="top" bgcolor="white" class="TableRowColor">
+<td><b>org.icefaces.impl.application.WindowScopeManager$SetupTimer</b></td>
+</tr>
+</table>
+              &nbsp;
+              <p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev">    &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Library&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><font CLASS="NavBarFont1">&nbsp;Tag&nbsp;</font></td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a HREF="tld-summary.html" TARGET="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Java, JSP, and JavaServer Pages are trademarks or registered 
+            trademarks of Sun Microsystems, Inc. in the US and other countries.
+            Copyright 2002-3 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

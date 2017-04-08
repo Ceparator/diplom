@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components">
+    <h:head>
+        <title>Edit routelist</title>
+    </h:head>
+    <h:body>
+        <f:view> 
+            <h:form> 
+                <h2 align="center"> 
+                    <h:outputLabel value="Edit routelist for route  #{routelistBean.routelist.idRoute.number}"/> 
+                </h2> 
+                <table align="center"> 
+                    <tr>
+                        <td>
+                            <ace:dataTable value="#{userBean.getUsersByRole('driver')}"
+                                           paginator="true"
+                                           paginatorPosition="bottom"
+                                           rows="15"
+                                           var="dr">
+                                <ace:column headerText="Driver" rendered ="true" >
+                                    <h:outputText value="#{dr.username.username}"/>
+                                </ace:column>
+                                <ace:column headerText=""> 
+                                    <h:commandLink immediate="true" action="#{routelistBean.selectDriver(dr.username.username)}" value="Select"/>
+                                </ace:column>
+                            </ace:dataTable>
+                        </td>
+                        <td style="width: 20px;">
+                        </td>
+                        <td>
+                            <ace:dataTable value="#{userBean.getUsersByRole('conductor')}"
+                                           paginator="true"
+                                           paginatorPosition="bottom"
+                                           rows="15"
+                                           var="cnd">
+                                <ace:column headerText="Conductor" rendered ="true" >
+                                    <h:outputText value="#{cnd.username.username}"/>
+                                </ace:column>
+                                <ace:column headerText=""> 
+                                    <h:commandLink immediate="true" action="#{routelistBean.selectConductor(cnd.username.username)}" value="Select"/>
+                                </ace:column>
+                            </ace:dataTable>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <ace:dataTable value="#{transportBean.getAllTransports()}"
+                               var="tr">
+                    <ace:column headerText="Id" sortBy="#{tr.idTransport} "
+                                rendered ="false" filterBy="#{tr.idTransport}" filterMatchMode="contains">
+                        <h:outputText value="#{tr.idTransport}"/>
+                    </ace:column>
+                    <ace:column headerText="Serial number" sortBy="#{tr.serialNumber}"
+                                filterBy="#{tr.serialNumber}" filterMatchMode="contains">
+                        <h:outputText value="#{tr.serialNumber}"/>
+                    </ace:column>
+                    <ace:column headerText=""> 
+                        <h:commandLink immediate="true" action="#{routelistBean.selectTransport(tr.serialNumber)}" value="Select"/>
+                    </ace:column>
+                </ace:dataTable>
+
+                <table >
+                    <tbody>
+                        <tr>
+                            <th> Driver </th>
+                            <th> Conductor </th>
+                            <th> Transport </th>
+                            <th> Shift </th>
+                        </tr>
+                        <tr>
+                            <th> 
+                                <h:inputText id="driv" value="#{routelistBean.routelist.driver}" required="true">
+                                </h:inputText> 
+                            </th> 
+                            <th> 
+                                <h:inputText id="conduc" value="#{routelistBean.routelist.conductor}" required="true">
+                                </h:inputText> 
+                            </th>
+                            <th> 
+                                <h:inputText id="tran" value="#{routelistBean.transport}" required="true">
+                                    <f:validator binding="#{transportValidator}"/>
+                                </h:inputText> 
+                            </th>
+                            <th> 
+                                <h:selectOneMenu value="#{routelistBean.routelist.idShift}" converter="#{shiftConverter}"> 
+                                    <f:selectItems value="#{shiftBean.getAllShifts()}" var="sht" 
+                                                   itemValue="#{sht}" itemLabel="#{sht.startTime} - #{sht.endTime}" />
+                                </h:selectOneMenu> 
+                            </th>
+                        </tr>
+                        <tr>
+                            <h:message for="driv" style="color:red" /> 
+                            <h:message for="conduc" style="color:red" /> 
+                            <h:message for="tran" style="color:red" /> 
+                            <h:message for="shif" style="color:red" /> 
+                        </tr>
+                    </tbody>
+                </table>
+                <br/>
+                <p>
+                    <h:commandButton value="Edit routelist" action="#{routelistBean.editRoutelist()}"/>
+                </p>
+            </h:form> 
+        </f:view>
+    </h:body>
+</html>
+

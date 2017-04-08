@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components">
+    <h:head>
+        <title>Edit repair</title>
+    </h:head>
+    <h:body>
+        <f:view> 
+            <h:form> 
+                <c:if test="#{request.isUserInRole('mechanic') and (empty repairBean.repair.expectedFixDate) }">
+                    <h2> 
+                        <h:outputLabel value="Assign repair to me"/> 
+                    </h2> 
+                    <table> 
+                        <tr> 
+                            <th align="left"> 
+                                <h:outputLabel value="Transport" for="tr"/> 
+                            </th> 
+                            <th> 
+                                <h:outputText id="tr" value="#{repairBean.repair.idTransport.serialNumber}"> 
+                                </h:outputText> 
+                            </th> 
+                        </tr> 
+                        <tr> 
+                            <th align="left"> 
+                                <h:outputLabel value="Driver" for="dr"/> 
+                            </th> 
+                            <th> 
+                                <h:outputText id="dr" value="#{repairBean.repair.driver}"> 
+                                </h:outputText> 
+                            </th>  
+                        </tr> 
+                        <tr> 
+                            <th align="left"> 
+                                <h:outputLabel value="Expected fix date" for="exd"/> 
+                            </th> 
+                            <th> 
+                                <ace:dateTimeEntry id="date" value="#{repairBean.repair.expectedFixDate}"
+                                                   pattern="yyyy-MM-dd"
+                                                   renderAsPopup="true" required="true"/>
+                            </th> 
+                            <th> 
+                                <h:message for="exd" style="color:red" /> 
+                            </th> 
+                        </tr>  
+                        <tr> 
+                            <th align="right"> 
+                                <h:commandButton  value="Assign" action="#{repairBean.editRepair()}"/>
+                            </th> 
+                        </tr> 
+                    </table>
+                </c:if>
+
+
+                <c:if test="#{request.isUserInRole('mechanic') and (!empty repairBean.repair.expectedFixDate) }">
+                    <h2> 
+                        <h:outputLabel value="Repair finished"/> 
+                    </h2> 
+                    <table> 
+                        <tr> 
+                            <th align="left"> 
+                                <h:outputLabel value="Transport" for="tr"/> 
+                            </th> 
+                            <th> 
+                                <h:outputText id="tr" value="#{repairBean.repair.idTransport.serialNumber}"> 
+                                </h:outputText> 
+                            </th> 
+                        </tr> 
+                        <tr> 
+                            <th align="left"> 
+                                <h:outputLabel value="Driver" for="dr"/> 
+                            </th> 
+                            <th> 
+                                <h:outputText id="dr" value="#{repairBean.repair.driver}"> 
+                                </h:outputText> 
+                            </th>  
+                        </tr> 
+                        <tr> 
+                            <th align="left"> 
+                                <h:outputLabel value="Expected fix date" for="exd"/> 
+                            </th> 
+                            <th> 
+                                <h:outputText id="exd" value="#{repairBean.repair.expectedFixDate}"> 
+                                </h:outputText> 
+                            </th> 
+                        </tr>  
+                        <tr> 
+                            <th align="left"> 
+                                <h:outputLabel value="Repair cost" for="rc"/> 
+                            </th> 
+                            <th> 
+                                <h:inputText id="rc" value="#{repairBean.repair.price}" required="true"> 
+                                    <f:validateDoubleRange maximum="10000000" minimum="1"/>
+                                </h:inputText> 
+                            </th> 
+                            <th> 
+                                <h:message for="rc" style="color:red" /> 
+                            </th> 
+                        </tr> 
+                        <tr> 
+                            <th align="right"> 
+                                <h:commandButton value="Finish repair" action="#{repairBean.editRepair()}"/>
+                            </th> 
+                        </tr> 
+                    </table>
+                </c:if>
+            </h:form> 
+        </f:view>
+    </h:body>
+</html>
+

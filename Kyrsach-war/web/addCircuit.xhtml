@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>New circuit</title>
+    </h:head>
+    <h:body>
+        <f:view> 
+            <h:form> 
+                <h2> 
+                    <h:outputLabel value="Add new circuit"/> 
+                </h2> 
+                <table>
+                    <tr>
+                        <th align="left">
+                            <h:outputLabel value="Circuit's place" for="number"/>
+                        </th>
+                        <th>
+                            <h:inputText id="number" value="#{addCircuitBean.number}" required="true">
+                                <f:validateLongRange maximum="#{circuitBean.size+1}" minimum="1"/>
+                            </h:inputText>
+                        </th>
+                        <th>
+                            <h:message for="number" style="color:red" />
+                        </th> 
+                    </tr> 
+                </table>
+                <br/>
+                <h:selectOneMenu value="#{addCircuitBean.newStopId}"> 
+                    <f:selectItems value="#{stopBean.getAllStops()}" var="stop" 
+                                   itemValue="#{stop.idStop}" itemLabel="#{stop.name}" /> 
+                </h:selectOneMenu>
+                <br/>
+                <h:commandButton  value="Add circuit" action="#{addCircuitBean.addNewCircuit(circuitBean.routeNumber, circuitBean.add)}"/> 
+                <br/>
+                <h:commandButton value="Back to route info" action="/routeCircuit.xhtml"/> 
+            </h:form> 
+        </f:view>
+    </h:body>
+</html>
+

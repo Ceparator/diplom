@@ -1,0 +1,205 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dialog
+          (ICEfaces ACE Components 4.0.0 Tag Library Reference)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="dialog (ICEfaces ACE Components 4.0.0 Tag Library Reference)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="dialog.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">ICEfaces ACE Components</font>
+<br>
+            Tag dialog</h2>
+<hr>The Dialog is a container component that can overlay other elements on page. Dialog has several customization options such as modal, resize, width, height, position. If position of dialog is out of place, try putting it as last child of body.<p>For more information, see the <a href="http://wiki.icefaces.org/display/ICE/Dialog">Dialog Wiki Documentation</a>.<hr><table border='1' cellpadding='3' cellspacing='0' width='100%'><tr bgcolor='#CCCCFF' class='TableHeadingColor'><td colspan='4'><font size='+2'><b>Client Events</b></font></td></tr><tr><td><b>Name</b></td><td><b>Description</b></td><td><b>Supported Classes for Argument</b></td><td><b>Default Event Scopes</b></td><tr><tr><td>close</td><td>Fired when the panel is closed (default event).</td><td>org.icefaces.ace.event.CloseEvent</td><td>execute=@this render=@all</td></tr></table><i>Client events can be used with Client Behaviors and the ace:ajax tag.</i><br><br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>org.icefaces.ace.component.dialog.DialogTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>binding</td><td>no</td><td>true</td><td><code>javax.el.ValueExpression</code></td><td>Using an EL expression, bind the component reference to a bean property, so that the component may be accessed in the bean.</td>
+</tr>
+<tr valign="top">
+<td>closable</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Boolean value that specifies whether the dialog should have a close button in the header. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>closeOnEscape</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Boolean value that Specifies whether the dialog should close when it has focus and the user presses the escape (ESC) key. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>dialogPosition</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The side of the dialog to position in relation to the target component. The format is "<horizontal value> <vertical value>". Possible horizontal values are "left", "right" and "center". Possible vertical values are "top", "center", and "bottom". Example: "left top" or "center center". Default = 'center'.</td>
+</tr>
+<tr valign="top">
+<td>dragHandle</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Specifies the jQuery selector(s) of the elements inside the dialog container that will be used as the drag handle(s). If this attribute isn't specified, any point of the dialog container can initiate the dragging action. The selectors are relative to the dialog's root element. When using multiple selectors, separate them by commas.</td>
+</tr>
+<tr valign="top">
+<td>draggable</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Boolean value whether to allow the user to drag the Panel using its header Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>header</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Header text</td>
+</tr>
+<tr valign="top">
+<td>height</td><td>no</td><td>true</td><td><code>int</code></td><td>Height of the element in pixels. Default (not specified or value <= 0) is auto. If auto, resizable should be false, or resizing may hehave erratically. If auto, IE7 may not size or position properly. Default = 'Integer.MIN_VALUE'.</td>
+</tr>
+<tr valign="top">
+<td>hideEffect</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Effect to use when hiding the dialog. Possible values are 'blind', 'clip', 'drop', 'explode, 'fade', 'fold', 'puff', 'slide', 'scale', 'bounce', 'highlight', and 'shake' (Some effects are not supported in IE browsers, see wiki page for more information).</td>
+</tr>
+<tr valign="top">
+<td>id</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The component identifier for this component. This value must be unique within the closest parent component that is a naming container.</td>
+</tr>
+<tr valign="top">
+<td>minHeight</td><td>no</td><td>true</td><td><code>int</code></td><td>Minimum height of resizable dialog Default = '0'.</td>
+</tr>
+<tr valign="top">
+<td>minWidth</td><td>no</td><td>true</td><td><code>int</code></td><td>Minimum width of a resizable dialog Default = '150'.</td>
+</tr>
+<tr valign="top">
+<td>modal</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Boolean value that specifies whether the document should be shielded with a partially transparent mask to require the user to close the Panel before being able to activate any elements in the document Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>onHide</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Javascript code to be executed when hiding the dialog</td>
+</tr>
+<tr valign="top">
+<td>onShow</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Javascript code to be executed when showing the dialog</td>
+</tr>
+<tr valign="top">
+<td>position</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Specifies where the dialog should be displayed relative to the viewport. Possible values: 1) a single string representing position within viewport: 'center', 'left', 'right', 'top', 'bottom'. 2) an array containing an x,y coordinate pair in pixel offset from left, top corner of viewport (e.g. [350,100]) 3) an array containing x,y position string values (e.g. ['right','top'] for top right corner).</td>
+</tr>
+<tr valign="top">
+<td>relativePosition</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>The side of the target component to position the dialog against. The format is "<horizontal value> <vertical value>". Possible horizontal values are "left", "right" and "center". Possible vertical values are "top", "center", and "bottom". Example: "left top" or "center center". Default = 'center'.</td>
+</tr>
+<tr valign="top">
+<td>relativeTo</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Id of the component to position the dialog against. Setting this id will override the 'position' attribute, using 'dialogPosition' and 'relativePosition' instead.</td>
+</tr>
+<tr valign="top">
+<td>rendered</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Return true if this component (and its children) should be rendered during the Render Response phase of the request processing lifecycle. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>resizable</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Makes the dialog resizable. Should be false if width or height is auto, or resizing may hehave erratically. Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>setFocus</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Specifies the ID of the component that should receive focus when the dialog is opened.</td>
+</tr>
+<tr valign="top">
+<td>showEffect</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Effect to use when showing the dialog. Possible values are 'blind', 'clip', 'drop', 'explode, 'fade', 'fold', 'puff', 'slide', 'scale', 'bounce', 'highlight', 'pulsate', and 'shake' (Some effects are not supported in IE7, see wiki page for more information).</td>
+</tr>
+<tr valign="top">
+<td>showHeader</td><td>no</td><td>true</td><td><code>boolean</code></td><td>Boolean value that specifies whether the dialog should have a header (default true) Default = 'true'.</td>
+</tr>
+<tr valign="top">
+<td>style</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Style to apply to the container element.</td>
+</tr>
+<tr valign="top">
+<td>styleClass</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Style class of the main container of dialog</td>
+</tr>
+<tr valign="top">
+<td>visible</td><td>no</td><td>true</td><td><code>boolean</code></td><td>visible can be used to toggle visibility on the server, rendered should not be used that way, setting rendered=false on a visible modal dialog will not remove the modality layer, visible=false must be set first (or client-side JS function called) Default = 'false'.</td>
+</tr>
+<tr valign="top">
+<td>widgetVar</td><td>no</td><td>true</td><td><code>java.lang.String</code></td><td>Name of the widget to access client side api</td>
+</tr>
+<tr valign="top">
+<td>width</td><td>no</td><td>true</td><td><code>int</code></td><td>Width of the element in pixels. Default (not specified or value <= 0) is auto. If auto, resizable should be false, or resizing may hehave erratically. If auto, IE7 may not size or position properly. Default = 'Integer.MIN_VALUE'.</td>
+</tr>
+<tr valign="top">
+<td>zindex</td><td>no</td><td>true</td><td><code>int</code></td><td>zindex property to control overlapping with other elements Default = '1000'.</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="dialog.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>
